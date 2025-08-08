@@ -99,9 +99,9 @@
         
     }
     .gradientbg {
-        background: linear-gradient(-45deg, #4b5448, #8cb8a6, #708d6d, #d9e0af);
+        background: linear-gradient(-45deg, #4b5448, #8cb8a6, #536e50, #d9e0af);
         background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
+        animation: gradient 8s ease infinite;
         padding-bottom: 100px; /* so content doesn't get cut off */
         border-radius: 20px;
         margin: 3rem;
