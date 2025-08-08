@@ -28,26 +28,33 @@
 		color: white;
         margin-bottom: 20px;
         border-radius:20px;
+        margin-left: 2rem;
+        margin-right: 2rem;
 	}
 
 	.logo {
-		font-size: 1.5rem;
+		font-size: 3rem;
 		font-weight: bold;
         transition: color 0.2s ease;
+        margin-left:3rem;
 	}
-
+    .logo:hover {
+		color: #f0a500;
+	}
   
 
 	.nav-links {
 		list-style: none;
 		display: flex;
 		gap: 1.5rem;
+        margin-right:3rem;
 	}
 
 	.nav-links a {
 		color: white;
 		text-decoration: none;
 		transition: color 0.2s ease;
+        font-size: 1.5rem;
 	}
 
 	.nav-links a:hover {

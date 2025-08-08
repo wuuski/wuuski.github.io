@@ -35,6 +35,8 @@
         background-color: rgb(173, 230, 210);
         margin: 5px;
         border-radius: 30px;
+        margin-left: 10%;
+        margin-right: 10%;
     }
 
 
@@ -43,7 +45,8 @@
         display: flex;
         justify-content: space-around;
         align-items: column;
-        
+        margin-left: 10%;
+        margin-right: 10%;
       }
 
       .flex-item {
