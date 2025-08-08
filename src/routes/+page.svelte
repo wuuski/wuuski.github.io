@@ -41,7 +41,7 @@
            I love music!! I listen to just about any genre of music (except country...). I especially love EDM and post rock. 
            Some of my favorite artists recently are Porter Robinson, Finneas, ILLENIUM, Sea Power, and Teleman.
            I've also been obssessed with the KPop Demon Hunters soundtrack as of late. In the box below, you'll be able to see
-           what I'm currently listening to on Spotify!! (Only if i'm online on discord...). My lofi playlist is linked to the right! 
+           what I'm currently listening to on Spotify!! (Only if i'm online on discord...). My lofi playlist is linked to the right! u can play it in the browser.
            
            
         </p>
@@ -79,8 +79,8 @@
        </div>
        <div class="flex-item">
         <p>
-            Why Veridiplo? 
-            Combination of Veridis Quo, my favorite Daft Punk <a class="diplocaulus" href="https://youtu.be/ySLc8gZ3oEc?feature=shared">song</a>, and my favorite fossil: <a class= "diplocaulus" href="https://en.wikipedia.org/wiki/Diplocaulus">diplocaulus</a>
+            what I'm listening to::
+            live update of my spotify! 
         </p>
        </div>
 </div>

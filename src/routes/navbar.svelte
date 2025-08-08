@@ -11,7 +11,7 @@
    
     <a href="/">
 	<div class="logo">
-        <img src="/favicon.png" alt="pixel art diplocaulus">  Veridiplo.com
+        <img src="/favicon.png" alt="pixel art diplocaulus">  Angela Wu
     </div>
     </a>
 	<ul class="nav-links">
