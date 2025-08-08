@@ -22,12 +22,8 @@
         image-rendering: pixelated;
         background-attachment: fixed;
     }
-	:global(p) { 
 	
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 25px;
-
-	}
+	
 	
 	:global(.flex-item) {
         border-radius: 20px;

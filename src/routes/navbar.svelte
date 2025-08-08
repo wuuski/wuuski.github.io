@@ -3,13 +3,16 @@
 		{ name: "Home", href: "/" },
 		{ name: "Portfolio", href: "/portfolio" },
 		{ name: "Projects", href: "/projects" },
-		{ name: "Contact", href: "/contact" }
+		// { name: "Contact", href: "/contact" }
 	];
 </script>
 
 <nav class="navbar">
+   
     <a href="/">
-	<div class="logo">Veridiplo.com</div>
+	<div class="logo">
+        <img src="/favicon.png" alt="pixel art diplocaulus">  Veridiplo.com
+    </div>
     </a>
 	<ul class="nav-links">
 		{#each links as link}
@@ -20,7 +23,9 @@
 
 <style>
 	.navbar {
-		display: flex;
+		
+        display: flex;
+        flex-wrap: nowrap;
 		justify-content: space-between;
 		align-items: center;
 		padding: 1rem 2rem;
@@ -30,14 +35,30 @@
         border-radius:20px;
         margin-left: 2rem;
         margin-right: 2rem;
+        border-color: rgb(59, 51, 38);
+        border-width: 3px;
 	}
 
 	.logo {
+
+        display: flex;
+        flex-wrap: nowrap;
+		justify-content: space-between;
 		font-size: 3rem;
 		font-weight: bold;
         transition: color 0.2s ease;
         margin-left:3rem;
 	}
+    .logo img { 
+        height:70px;
+        width:auto;
+        object-fit: contain;
+        margin-right: 25px;
+    }
+    .logo img:hover { 
+        opacity: 80%;
+    }
+
     .logo:hover {
 		color: #f0a500;
 	}

@@ -25,8 +25,10 @@
         
         
     <p>
-        Hello!! I’m Angela.
-        I like making things — games, painting, going outside. Current rising freshman @ UC Berkeley. Big fan of playing video games, matcha, reading, and quiet mornings.
+        Hello!! I’m Angela, a rising DS major @ UC Berkeley from San Diego. In my free time, I love making art, reading,
+        going on walks, and playing video games. 
+
+
     </p>
     </div>
 
@@ -36,10 +38,12 @@
 <div class="flex-container">
     <div class="flex-item-color">
         <p>
-            I love music!!! I love music!!! I love music!!! I love music!!! I love music!!! I love music!!! 
-            I love music!!! I love music!!! I love music!!! I love music!!! 
-            I love music!!! 
-            vI love music!!! 
+           I love music!! I listen to just about any genre of music (except country...). I especially love EDM and post rock. 
+           Some of my favorite artists recently are Porter Robinson, Finneas, ILLENIUM, Sea Power, and Teleman.
+           I've also been obssessed with the KPop Demon Hunters soundtrack as of late. In the box below, you'll be able to see
+           what I'm currently listening to on Spotify!! (Only if i'm online on discord...). My lofi playlist is linked to the right! 
+           
+           
         </p>
     </div>
     <div class="flex-item">
@@ -76,7 +80,7 @@
        <div class="flex-item">
         <p>
             Why Veridiplo? 
-            Combination of Veridis Quo, my favorite Daft Punk song, and my favorite fossil: diplocaulus
+            Combination of Veridis Quo, my favorite Daft Punk <a class="diplocaulus" href="https://youtu.be/ySLc8gZ3oEc?feature=shared">song</a>, and my favorite fossil: <a class= "diplocaulus" href="https://en.wikipedia.org/wiki/Diplocaulus">diplocaulus</a>
         </p>
        </div>
 </div>
@@ -134,6 +138,13 @@
         font-size: 25px;
     }
 
+    .diplocaulus { 
+        color: rgb(66, 97, 66);
+        text-decoration: underline;
+    }
+    .diplocaulus:hover { 
+        color: rgb(97, 125, 97);
+    }
     .stylized { 
         text-align: center;
         padding: 10px;

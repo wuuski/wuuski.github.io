@@ -14,8 +14,12 @@
 	delay: 300,
 }}> 
 
-<h1 class="stylized">Projects</h1>
-
+<h1 class="stylized">Recent Projects</h1>
+<div class ="flex-item">
+    <p>
+    Sadly I have not been locked in... There are like no projects but I hope to do some cool shit in college....
+</p>
+</div>
 <div class="flex-container">
     <div class ="flex-item">
         <a href = "https://itch.io/jam/gmtk-2025/rate/3778108">
@@ -38,17 +42,10 @@
         font-size:50px;
     }
     p { 
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 25px;
     }
-    .stylized { 
-        text-align: center;
-        padding: 10px;
-        background-color: rgb(173, 230, 210);
-        margin: 5px;
-        border-radius: 30px;
-        margin-left: 10%;
-        margin-right: 10%;
-    }
+   
     .gradientbg {
         background: linear-gradient(-45deg, #4b5448, #8cb8a6, #708d6d, rgb(194, 224, 175));
         background-size: 400% 400%;
@@ -72,6 +69,19 @@
             background-position: 0% 50%;
         }
     }
+    .stylized { 
+        text-align: center;
+        padding: 10px;
+        background-color: rgb(213,208,186);
+        margin: 5px;
+        border-radius: 30px;
+        margin-left: 10%;
+        margin-right: 10%;
+        border-color: rgb(59, 50, 50);
+        border-width: 3px;
+    }
+
+
     .flex-container {
         border-radius: 20px;
         display: flex;
@@ -81,11 +91,6 @@
         margin-right: 10%;
       }
 
-      .flex-item {
-        border-radius: 20px;
-        padding: 10px;
-        background-color: lightblue;
-        margin: 5px;
-      }
+    
 
 </style>

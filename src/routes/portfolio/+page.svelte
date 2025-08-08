@@ -18,8 +18,9 @@
 <div class="flex-container">
     
     <div class ="flex-item" style="padding-left:30%; padding-right:30%;">
+        <p>
         I've loved doing visual art all my life, here's a snippet of some of my favorite art pieces I've made!!
-    
+      </p>
     </div>
 
 </div>
@@ -122,7 +123,10 @@
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size:50px;
     }
-   
+    p { 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 30px;
+   }
     .stylized { 
         text-align: center;
         padding: 10px;
@@ -131,6 +135,8 @@
         border-radius: 30px;
         margin-left: 10%;
         margin-right: 10%;
+        border-color: rgb(59, 50, 50);
+        border-width: 3px;
     }
 
 
@@ -149,7 +155,7 @@
         background-color: rgb(176,181,158);
         margin: 5px;
         border-color: rgb(76, 68, 54);
-        border-width: 2px;
+        border-width: 3px;
       } 
 
 </style>
