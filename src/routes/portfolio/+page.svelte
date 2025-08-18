@@ -26,67 +26,49 @@
 </div>
 <div class="flex-container">
     <div class ="flex-item">
-        <a href = "https://itch.io/jam/gmtk-2025/rate/3778108">
         <img src="grandpapatio.png" alt="A watercolor painting of a cat" >
-    </a>
     </div>
    
 
 </div>
 <div class="flex-container">
     <div class ="flex-item">
-        <a href = "https://itch.io/jam/gmtk-2025/rate/3778108">
         <img src="/Edgar.png" alt="A watercolor painting of a cat" >
-    </a>
     </div>
     <div class ="flex-item">
-        <a href = "https://itch.io/jam/gmtk-2025/rate/3778108">
             <img src="/The Cozy Hole-in-the-Tree.png" alt="digital painting of a magical forest" >
-        </a>
     </div>
 
 </div>
 <div class="flex-container">
     <div class ="flex-item">
-        <a href = "https://itch.io/jam/gmtk-2025/rate/3778108">
         <img src="Scientists' Refuge.png" alt="A watercolor painting of a cat" >
-    </a>
     </div>
    
 
 </div>
 <div class="flex-container">
     <div class ="flex-item">
-        <a href = "https://itch.io/jam/gmtk-2025/rate/3778108">
         <img src="/Betty.png" alt="A watercolor painting of a cat" >
-    </a>
     </div>
     <div class ="flex-item">
-        <a href = "https://itch.io/jam/gmtk-2025/rate/3778108">
             <img src="/Angela.png" alt="digital painting of a magical forest" >
-        </a>
     </div>
 
 </div>
 <div class="flex-container">
     <div class ="flex-item">
-        <a href = "https://itch.io/jam/gmtk-2025/rate/3778108">
         <img src="/The Shell.png" alt="A watercolor painting of a cat" >
-    </a>
     </div>
     
 
 </div>
 <div class="flex-container">
     <div class ="flex-item">
-        <a href = "https://itch.io/jam/gmtk-2025/rate/3778108">
         <img src="/girlpainting.png" alt="A watercolor painting of a cat" >
-    </a>
     </div>
     <div class ="flex-item">
-        <a href = "https://itch.io/jam/gmtk-2025/rate/3778108">
             <img src="/mishpainting.png" alt="digital painting of a magical forest" >
-        </a>
     </div>
 
 </div>
