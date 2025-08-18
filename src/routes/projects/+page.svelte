@@ -15,19 +15,34 @@
 }}> 
 
 <h1 class="stylized">Recent Projects</h1>
-<div class ="flex-item">
+<div class ="flex-item-p">
     <p>
-    Sadly I have not been locked in... There are like no projects but I hope to do some cool shit in college....
-</p>
+    Still a work in progress, more projects to come soon! Click on the images to learn more
+    </p>
 </div>
 <div class="flex-container">
-    <div class ="flex-item">
-        <a href = "https://itch.io/jam/gmtk-2025/rate/3778108">
+    <div class ="flex-item-projects">
+        <a href = "https://itch.io/jam/gmtk-2025/rate/3778108" target="_blank">
         <img src="/itchtitle.png" alt="itch banner" >
     </a>
     </div>
-    <div class ="flex-item">A game my friends and I released on Aug 3rd for the 2025 GMTK Game Jam!!
+    <div class ="flex-item">
+        <p>
+            A silly fishing game where Terry the cat captain and his crew use rope nets to catch fish! Made for the 2025 GMTK Game Jam.
+        </p>
+    </div>
 
+</div>
+<div class="flex-container">
+    <div class ="flex-item-projects">
+        <a href = "https://drive.google.com/file/d/1QkYQZWJ6dqt-i1KgiO_hFSaXbRsxEP2X/view?usp=drive_link" target="_blank">
+        <img src="/StaticFirePicture.jpg" width= 315px alt="Dawn Runner Rocket Engine Firing" >
+    </a>
+    </div>
+    <div class ="flex-item">
+        <p>
+            Documentation of Dawn Runner, a hybrid rocket engine developed by our student team of six, including design overview, engine performance, and construction details.
+        </p>
     </div>
 
 </div>
@@ -44,10 +59,12 @@
     p { 
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 25px;
+        text-align: center;
+        padding: 10px;
     }
    
     .gradientbg {
-        background: linear-gradient(-45deg, #4b5448, #8cb8a6, #708d6d, rgb(194, 224, 175));
+        background: linear-gradient(-45deg, #8690a2, #d2c296, #35495d, #e0decd);
         background-size: 400% 400%;
         animation: gradient 5s ease infinite;
         padding-bottom: 100px; /* so content doesn't get cut off */
@@ -72,7 +89,7 @@
     .stylized { 
         text-align: center;
         padding: 10px;
-        background-color: rgb(213,208,186);
+        background-color: #e0d0cd;
         margin: 5px;
         border-radius: 30px;
         margin-left: 10%;
@@ -89,8 +106,52 @@
         align-items: column;
         margin-left: 10%;
         margin-right: 10%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .flex-item-p {
+        border-radius: 20px;
+        padding: 10px;
+        margin-left: 500px;
+        margin-right: 10%;
+        background-color: #fcedd3;
+        margin: 5px;
+        border-color: rgb(76, 68, 54);
+        border-width: 2px;
+		align-items: row; 
+        
+        
+      }
+      .flex-item {
+        border-radius: 20px;
+        padding: 10px;
+        margin-left: 500px;
+        margin-right: 10%;
+        background-color: #fcedd3;
+        margin: 5px;
+        border-color: rgb(76, 68, 54);
+        border-width: 2px;
+		align-items: row; 
+        max-width: 600px;
+        
+      }
+      .flex-item-projects {
+        border-radius: 20px;
+        padding: 10px;
+        background-color: rgb(176,181,158);
+        margin: 5px;
+        border-color: rgb(76, 68, 54);
+        border-width: 2px;
+		align-items: row; 
+        text-align: center;
       }
 
+      .flex-item-projects:hover { 
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s ease-in-out;
+        background-color: #7f998b;
+      }
     
 
 </style>

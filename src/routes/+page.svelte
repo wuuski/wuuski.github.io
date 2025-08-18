@@ -25,8 +25,8 @@
         
         
     <p>
-        Hello!! I’m Angela, a rising DS major @ UC Berkeley from San Diego. In my free time, I love making art, reading,
-        going on walks, and playing video games. 
+        Hello!! I’m Angela, an incoming Data Science major @ UC Berkeley from San Diego passionate about public policy. 
+        In my free time, I love making art, reading, going on walks, and making + playing video games. 
 
 
     </p>
@@ -71,7 +71,7 @@
     <div class="discordbox">
         <a href="https:discord.gg/j3vkCSTTfr" class="discordbox">
             <img
-            src="https://lanyard-profile-readme.vercel.app/api/696197741788921969?bg=556618&borderRadius=15px"
+            src="https://lanyard-profile-readme.vercel.app/api/696197741788921969?bg=ab9b8c&borderRadius=15px"
             alt="Discord Presence"
             style=" border-radius: 20px; margin-top: 20px; width:150%; width: 100%; max-width: 500px; border-width:2px;borderColor=4b5448"
           />
@@ -103,7 +103,7 @@
         
     }
     .gradientbg {
-        background: linear-gradient(-45deg, #4b5448, #8cb8a6, #536e50, #d9e0af);
+        background: linear-gradient(-45deg, #8690a2, #d2c296, #35495d, #e0decd);
         background-size: 400% 400%;
         animation: gradient 8s ease infinite;
         padding-bottom: 100px; /* so content doesn't get cut off */
@@ -148,7 +148,7 @@
     .stylized { 
         text-align: center;
         padding: 10px;
-        background-color: rgb(213,208,186);
+        background-color: #e0d0cd;
         margin: 5px;
         border-radius: 30px;
         margin-left: 10%;
@@ -177,11 +177,16 @@
       .flex-item-color { 
         border-radius: 20px;
         padding: 10px;
-        background-color: rgb(198, 195, 179);
+        background-color: #e0d0cd;
         margin: 5px;
         border-color: rgb(76, 68, 54);
         border-width: 2px;
 		align-items: row; 
+      }
+      :global(.flex-item-color:hover) { 
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s ease-in-out;
       }
       .flex-item:hover { 
         transform: translateY(-5px);

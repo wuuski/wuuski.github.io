@@ -1,8 +1,9 @@
 <script>
 	let links = [
 		{ name: "Home", href: "/" },
+        { name: "Projects", href: "/projects" },
 		{ name: "Portfolio", href: "/portfolio" },
-		{ name: "Projects", href: "/projects" },
+		
 		// { name: "Contact", href: "/contact" }
 	];
 </script>
@@ -29,7 +30,7 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 1rem 2rem;
-		background-color: #4c6e56;
+		background-color: #4c556e;
 		color: white;
         margin-bottom: 20px;
         border-radius:20px;

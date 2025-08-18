@@ -17,7 +17,7 @@
 
 <div class="flex-container">
     
-    <div class ="flex-item" style="padding-left:30%; padding-right:30%;">
+    <div class ="flex-item" >
         <p>
         I've loved doing visual art all my life, here's a snippet of some of my favorite art pieces I've made!!
       </p>
@@ -96,7 +96,7 @@
     background-color:rgb(111, 145, 135);
    } */
    .gradientbg {
-        background: linear-gradient(-45deg, #544d48, #9ccc85, #708d6d, rgb(175, 224, 213));
+        background: linear-gradient(-45deg, #8690a2, #d2c296, #35495d, #e0decd);
         background-size: 400% 400%;
         animation: gradient 5s ease infinite;
         padding-bottom: 100px; /* so content doesn't get cut off */
@@ -126,11 +126,12 @@
     p { 
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 30px;
+        text-align: center;
    }
     .stylized { 
         text-align: center;
         padding: 10px;
-        background-color: rgb(213,208,186);
+        background-color: #e0d0cd;
         margin: 5px;
         border-radius: 30px;
         margin-left: 10%;
@@ -148,14 +149,5 @@
         margin-left: 10%;
         margin-right: 10%;
       }
-
-      .flex-item {
-        border-radius: 20px;
-        padding: 10px;
-        background-color: rgb(176,181,158);
-        margin: 5px;
-        border-color: rgb(76, 68, 54);
-        border-width: 3px;
-      } 
 
 </style>

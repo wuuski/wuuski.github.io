@@ -11,7 +11,7 @@
     :global(body) {
         /* display: flex; */
         height: 100vh;
-        background-color:rgb(58,73,50);
+        background-color:#101829;
         /*background-image: url('picnicblanket.png');*/
         background-repeat: no-repeat;
         
@@ -28,7 +28,7 @@
 	:global(.flex-item) {
         border-radius: 20px;
         padding: 10px;
-        background-color: rgb(176,181,158);
+        background-color: #fcedd3;
         margin: 5px;
         border-color: rgb(76, 68, 54);
         border-width: 2px;
