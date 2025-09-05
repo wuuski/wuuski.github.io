@@ -1,3 +1,6 @@
+# My personal website, made with Svelte. The url is [`angelawu.dev`](https://angelawu.dev)
+
+
 # sv
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
