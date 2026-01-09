@@ -77,6 +77,7 @@
    /* body { 
     background-color:rgb(111, 145, 135);
    } */
+    
    .gradientbg {
         background: linear-gradient(-45deg, #8690a2, #d2c296, #35495d, #e0decd);
         background-size: 400% 400%;
@@ -131,5 +132,5 @@
         margin-left: 10%;
         margin-right: 10%;
       }
-
+      
 </style>

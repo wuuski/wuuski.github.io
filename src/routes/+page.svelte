@@ -17,16 +17,15 @@
 }}> 
 <h1 class="stylized">Hi! I'm Angela</h1>
 
-<div class="flex-container">
-    <div class ="flex-item">
+<div class="flex-container first">
+    <div class ="flex-item myface">
         <img src="myface.png" alt="my face">
     </div>
-    <div class ="flex-item">
+    <div class ="flex-item info">
         
         
     <p>
-        Hello!! I’m Angela, an incoming Data Science major @ UC Berkeley from San Diego passionate about public policy. 
-        In my free time, I love making art, reading, going on walks, and making + playing video games. 
+        I’m a Data Science student @ UC Berkeley interested in machine learning, computer vision, and data-driven product design. I enjoy working end-to-end from data extraction and feature engineering to interpretable models and usable outputs.
 
 
     </p>
@@ -36,17 +35,22 @@
 
 
 <div class="flex-container">
-    <div class="flex-item-color">
-        <p>
-           I love music!! I listen to just about any genre of music (except country...). I especially love EDM and post rock. 
-           Some of my favorite artists recently are Porter Robinson, Finneas, ILLENIUM, Sea Power, and Teleman.
-           I've also been obssessed with the KPop Demon Hunters soundtrack as of late. In the box below, you'll be able to see
-           what I'm currently listening to on Spotify!! (Only if i'm online on discord...). My lofi playlist is linked to the right! u can play it in the browser.
-           
-           
+    <div class="flex-item-color hobby-box">
+        <p class="hobby-title">
+            Outside of Data Science, I love ... 
         </p>
+            <ul class="hobby-list">
+            <li>Drawing, illustration, and visual design  </li>
+            <li>Reading novels! Current: <i>The Count of Monte Cristo</i></li>
+            <li>Crochet & fiber arts projects  </li>
+            <li>Rock climbing at Mosaic (Berkeley)</li>
+            <li>Exploring SF & Bay Area day trips  </li>
+            <li>Listening to music!! My lofi playlist is linked to the right! you can play it right here in the browser.</li> 
+           </ul>
+           
+       
     </div>
-    <div class="flex-item">
+    <div class="flex-item playlist">
        
     <iframe 
         title="myplaylist"
@@ -137,14 +141,18 @@
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 25px;
     }
-
-    .diplocaulus { 
+    li { 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 20px;
+        margin-left:20px;
+    }
+    /* .diplocaulus { 
         color: rgb(66, 97, 66);
         text-decoration: underline;
     }
     .diplocaulus:hover { 
         color: rgb(97, 125, 97);
-    }
+    } */
     .stylized { 
         text-align: center;
         padding: 10px;
@@ -194,8 +202,64 @@
         transition: all 0.2s ease-in-out;
         
       }
+      .hobby-box {
+        display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* not space-between */
+  gap: 1rem;  
+}
+.hobby-list {
+    margin: 0;
+  padding-left: 1.2rem;
+  list-style: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+  display: flex;
+  
+}
+.hobby-title { margin: 0; }
+@media (max-width: 1450px) {
+    .myface {
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+  }
+  .first{
+    flex-direction: column;
+    align-items: center;
+  }
+/*   
+  .info{
+    flex: none;
+    width: 100%;
+    max-width: 520px;   
+  } */
+}
+@media (max-width: 1200px) {
+    .myface,
+    .playlist {
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+  }
+  .flex-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* .flex-item{
+    flex: none;
+    width: 100%;
+    max-width: 520px;   
+  } */
+}
+/*       
       .flex-item.right { 
         flex:2;
         
-      }
+      } */
 </style>

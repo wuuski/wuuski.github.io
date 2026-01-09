@@ -21,12 +21,35 @@
     </p>
 </div>
 <div class="flex-container">
+    
+    <div class ="flex-item-projects">
+        <a href = "https://image-popularity-yolo.streamlit.app/" target="_blank">
+        <img src="/yolo2.png" alt="yolo" >
+    </a>
+    </div>
+    <div class ="flex-item project-text">
+
+        <p>
+    Image Popularity Prediction
+
+    <li>I built an end-to-end machine learning system that predicts whether an image will be popular based on visual features.</li>
+	<li>Used YOLOv11 to detect objects and compute spatial distributions across a 3×3 grid</li>
+	<li>Engineered color statistics (RGB mean / variance) from raw pixels</li>
+    <li> Trained and compared Random Forest and LightGBM models </li>
+    <li> Deployed an interactive Streamlit web app for real-time inference and model interpretability</li>
+    <li>Tech: Python, OpenCV, YOLO, LightGBM, scikit-learn, Streamlit</li>
+        </p>
+    </div>
+
+</div>
+<div class="flex-container">
+    
     <div class ="flex-item-projects">
         <a href = "https://itch.io/jam/gmtk-2025/rate/3778108" target="_blank">
         <img src="/itchtitle.png" alt="itch banner" >
     </a>
     </div>
-    <div class ="flex-item">
+    <div class ="flex-item project-text">
         <p>
             A silly fishing game where Terry the cat captain and his crew use rope nets to catch fish! Made for the 2025 GMTK Game Jam.
         </p>
@@ -39,7 +62,7 @@
         <img src="/StaticFirePicture.jpg" width= 315px alt="Dawn Runner Rocket Engine Firing" >
     </a>
     </div>
-    <div class ="flex-item">
+    <div class ="flex-item project-text">
         <p>
             Documentation of Dawn Runner, a hybrid rocket engine developed by our student team of six, including design overview, engine performance, and construction details.
         </p>
@@ -58,9 +81,14 @@
     }
     p { 
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 25px;
+        font-size: 20px;
         text-align: center;
         padding: 10px;
+    }
+    li { 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 20px;
+        margin-left:20px;
     }
    
     .gradientbg {
@@ -98,8 +126,15 @@
         border-width: 3px;
     }
 
-
     .flex-container {
+        display: flex;
+        align-items: center;        /* vertical alignment */
+        justify-content: center;    /* center the whole row */
+        gap: 40px;                  /* space between image + text */
+        margin: 20px auto;
+        max-width: 1100px;
+        }
+    /* .flex-container {
         border-radius: 20px;
         display: flex;
         justify-content: space-around;
@@ -108,12 +143,12 @@
         margin-right: 10%;
         margin-top: 10px;
         margin-bottom: 10px;
-      }
+      } */
       .flex-item-p {
         border-radius: 20px;
         padding: 10px;
-        margin-left: 500px;
-        margin-right: 10%;
+        /* margin-left: 500px; */
+        /* margin-right: 10%; */
         background-color: #fcedd3;
         margin: 5px;
         border-color: rgb(76, 68, 54);
@@ -122,20 +157,62 @@
         
         
       }
-      .flex-item {
+      .project-text {
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 900px) {
+    .flex-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .flex-item-projects,
+  .flex-item{
+    flex: none;
+    width: 100%;
+    max-width: 520px;   /* tweak: 480–600 */
+  }
+  .project-text {
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+  }
+}
+      /* .flex-item {
         border-radius: 20px;
-        padding: 10px;
-        margin-left: 500px;
-        margin-right: 10%;
-        background-color: #fcedd3;
+        padding: 10px; */
+        /* margin-left: 500px; */
+        /* margin-right: 10%; */
+        /* background-color: #fcedd3;
         margin: 5px;
         border-color: rgb(76, 68, 54);
         border-width: 2px;
 		align-items: row; 
         max-width: 600px;
         
-      }
-      .flex-item-projects {
+      } */
+      /* .flex-item {
+        flex: 1;           
+        max-width: 600px;
+        background-color: #fcedd3;
+        } */
+        .flex-item,
+.flex-item-p {
+  background-color: #fcedd3;
+  border-radius: 20px;
+  border: 2px solid rgb(76, 68, 54);
+  padding: 20px;
+  flex:1;
+}
+.flex-item-projects img {
+  width: 100%;
+  
+  height: auto;
+  display: block;
+  border-radius: 12px; /* optional inner softness */
+}
+      /* .flex-item-projects {
         border-radius: 20px;
         padding: 10px;
         background-color: rgb(176,181,158);
@@ -144,14 +221,28 @@
         border-width: 2px;
 		align-items: row; 
         text-align: center;
-      }
+      } */
+      .flex-item-projects {
+        background-color: rgb(176, 181, 158); /* green card */
+        border-radius: 20px;
+        border: 2px solid rgb(76, 68, 54);
+        padding: 15px;
+        overflow: hidden;
+        flex:1.6;
+        }
 
+      .flex-item-projects {
+        flex: 0 0 320px;   /* fixed image column */
+        text-align: center;
+        }
+   
       .flex-item-projects:hover { 
         transform: translateY(-5px);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         transition: all 0.2s ease-in-out;
         background-color: #7f998b;
       }
-    
+      .flex-item-projects { flex: 0 0 45%; }
+      .flex-item         { flex: 0 0 55%; }
 
 </style>

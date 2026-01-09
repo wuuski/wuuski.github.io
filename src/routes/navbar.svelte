@@ -12,7 +12,7 @@
    
     <a href="/">
 	<div class="logo">
-        <img src="/favicon.png" alt="pixel art diplocaulus">  Angela Wu
+        <img src="/favicon.png" alt="pixel art moon">  Angela Wu
     </div>
     </a>
 	<ul class="nav-links">
@@ -82,4 +82,23 @@
 	.nav-links a:hover {
 		color: #f0a500;
 	}
+
+@media (max-width: 900px) {
+    /* .logo{
+    flex-direction: column;
+    align-items: center;
+  } */
+  /* .flex-item-projects,
+  .flex-item{
+    flex: none;
+    width: 100%;
+    max-width: 520px;   
+  } */
+  .nav-links {
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+  }
+}
 </style>
