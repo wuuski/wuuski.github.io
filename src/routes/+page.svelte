@@ -180,7 +180,7 @@
         margin-left: 10%;
         margin-right: 10%;
         margin-top:1%;
-        
+        transition: opacity 0.3s ease;
       }
       .flex-item-color { 
         border-radius: 20px;
@@ -238,6 +238,9 @@
     max-width: 520px;   
   } */
 }
+/* .myface, .playlist{
+    transition: opacity 0.5s ease;
+} */
 @media (max-width: 1200px) {
     .myface,
     .playlist {
