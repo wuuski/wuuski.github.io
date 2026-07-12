@@ -3,7 +3,7 @@
 		
         { name: "Projects", href: "/projects" },
 		{ name: "Art", href: "/portfolio" },
-        { name: "Photo", href: "/portfolio" },
+        { name: "Photo", href: "/photos" },
         { name: "Blog", href: "https://grippyslide.bearblog.dev", external: true },
         { name: "Resume", href: "/resume.pdf"},
         { name: "Contact", href: "/contact" },

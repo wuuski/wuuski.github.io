@@ -58,7 +58,7 @@
 
     <a
     class="hotspot photo"
-    href="/now"
+    href="/photos"
     aria-label="Open photo page"
     ></a>
 
