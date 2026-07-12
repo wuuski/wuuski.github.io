@@ -38,16 +38,17 @@
 			alt: 'A concert stage illuminated in blue light with text projected behind the performers',
 			orientation: 'landscape'
 		},
-		{
-			title: 'After Hours',
-			image: '/shop.jpg',
-			alt: 'A dimly lit shop interior with colorful papel picado decorations',
-			orientation: 'landscape'
-		},
+		
 		{
 			title: 'Terracotta',
 			image: '/terracotta.jpg',
 			alt: 'Rows of Terracotta Army figures viewed from above',
+			orientation: 'landscape'
+		},
+        {
+			title: 'Drifting',
+			image: '/drifting.jpg',
+			alt: 'Mofeng drifting in the ocean on a Unicorn floating device',
 			orientation: 'landscape'
 		},
 		{
@@ -61,7 +62,14 @@
 			image: '/waterfall.jpg',
 			alt: 'A small waterfall surrounded by dense greenery and lily pads',
 			orientation: 'landscape'
-		}
+		},
+        {
+			title: 'After Hours',
+			image: '/shop.jpg',
+			alt: 'A dimly lit shop interior with colorful papel picado decorations',
+			orientation: 'landscape'
+		},
+        
 	];
 </script>
 
