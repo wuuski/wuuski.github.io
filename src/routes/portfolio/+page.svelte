@@ -1,11 +1,13 @@
 <script>
-	import { slide } from 'svelte/transition';
+	import { browser } from '$app/environment';
+	import { onDestroy } from 'svelte';
+	import { fade, scale, slide } from 'svelte/transition';
 
 	const artworks = [
 		{
 			title: 'Grandpas Garden',
 			image: '/grandpapatio.png',
-			alt: 'Artwork titled Grandpa Patio'
+			alt: 'A colorful painting of a sunlit garden and wooden patio'
 		},
 		{
 			title: 'Edgar',
@@ -20,38 +22,97 @@
 		{
 			title: 'Scientists’ Refuge',
 			image: "/Scientists' Refuge.png",
-			alt: 'Artwork titled Scientists’ Refuge'
+			alt: 'Digital painting titled Scientists’ Refuge'
 		},
 		{
 			title: 'Betty',
 			image: '/Betty.png',
-			alt: 'Artwork titled Betty'
+			alt: 'Painted portrait titled Betty'
 		},
 		{
 			title: 'Angela',
 			image: '/Angela.png',
-			alt: 'Artwork titled Angela'
+			alt: 'Graphite portrait titled Angela'
 		},
 		{
 			title: 'The Shell',
 			image: '/The Shell.png',
-			alt: 'Artwork titled The Shell'
+			alt: 'Digital painting of a restaurant inside a giant shell'
 		},
 		{
 			title: 'Memory Project',
 			image: '/girlpainting.png',
-			alt: 'Painting of a girl'
+			alt: 'Painted portrait of a girl'
 		},
 		{
 			title: 'Misha',
 			image: '/mishpainting.png',
-			alt: 'Artwork titled Mish Painting'
+			alt: 'Painted portrait titled Misha'
 		}
 	];
+
+	let selectedIndex = null;
+
+	$: selectedArtwork =
+		selectedIndex === null ? null : artworks[selectedIndex];
+
+	/*
+		Prevent the page behind the lightbox from scrolling.
+	*/
+	$: if (browser) {
+		document.body.style.overflow =
+			selectedIndex === null ? '' : 'hidden';
+	}
+
+	onDestroy(() => {
+		if (browser) {
+			document.body.style.overflow = '';
+		}
+	});
+
+	function openArtwork(index) {
+		selectedIndex = index;
+	}
+
+	function closeArtwork() {
+		selectedIndex = null;
+	}
+
+	function showPrevious() {
+		if (selectedIndex === null) return;
+
+		selectedIndex =
+			(selectedIndex - 1 + artworks.length) % artworks.length;
+	}
+
+	function showNext() {
+		if (selectedIndex === null) return;
+
+		selectedIndex = (selectedIndex + 1) % artworks.length;
+	}
+
+	function handleKeydown(event) {
+		if (selectedIndex === null) return;
+
+		if (event.key === 'Escape') {
+			closeArtwork();
+		}
+
+		if (event.key === 'ArrowLeft') {
+			showPrevious();
+		}
+
+		if (event.key === 'ArrowRight') {
+			showNext();
+		}
+	}
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
 	<title>Art | Angela Wu</title>
+
 	<meta
 		name="description"
 		content="A selection of artwork and illustrations created by Angela Wu."
@@ -86,41 +147,93 @@
 						delay: 220 + index * 90
 					}}
 				>
-					<a
+					<button
 						class="art-image"
-						href={artwork.image}
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label={`View ${artwork.title} at full size`}
+						type="button"
+						on:click={() => openArtwork(index)}
+						aria-label={`Open ${artwork.title} in gallery`}
 					>
 						<img
 							src={artwork.image}
 							alt={artwork.alt}
 							loading={index > 1 ? 'lazy' : 'eager'}
 						/>
-					</a>
 
-					<figcaption class="art-caption">
-						<div>
-							<p class="art-category">Selected artwork</p>
-							<h2>{artwork.title}</h2>
-						</div>
-
-						<a
-							class="art-link"
-							href={artwork.image}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							View full size
+						<span class="art-overlay">
+							<span>{artwork.title}</span>
 							<span aria-hidden="true">↗</span>
-						</a>
-					</figcaption>
+						</span>
+					</button>
 				</figure>
 			{/each}
 		</div>
 	</section>
 </main>
+
+{#if selectedArtwork}
+	<div
+		class="lightbox"
+		role="dialog"
+		aria-modal="true"
+		aria-label={`Viewing ${selectedArtwork.title}`}
+		on:click={closeArtwork}
+		in:fade={{ duration: 180 }}
+		out:fade={{ duration: 150 }}
+	>
+		<button
+			class="close-button"
+			type="button"
+			on:click|stopPropagation={closeArtwork}
+			aria-label="Close gallery"
+		>
+			<span aria-hidden="true">×</span>
+		</button>
+
+		<button
+			class="gallery-arrow previous"
+			type="button"
+			on:click|stopPropagation={showPrevious}
+			aria-label="View previous artwork"
+		>
+			<span aria-hidden="true">‹</span>
+		</button>
+
+		<div
+			class="lightbox-content"
+			on:click|stopPropagation
+			in:scale={{
+				duration: 220,
+				start: 0.96
+			}}
+		>
+			<img
+				class="lightbox-image"
+				src={selectedArtwork.image}
+				alt={selectedArtwork.alt}
+			/>
+
+			<div class="lightbox-footer">
+				<div>
+					<p class="lightbox-label">Selected artwork</p>
+					<h2>{selectedArtwork.title}</h2>
+				</div>
+
+				<p class="counter">
+					{selectedIndex + 1} / {artworks.length}
+				</p>
+			</div>
+		</div>
+
+		<button
+			class="gallery-arrow next"
+			type="button"
+			on:click|stopPropagation={showNext}
+			aria-label="View next artwork"
+		>
+			<span aria-hidden="true">›</span>
+		</button>
+	</div>
+{/if}
 
 <style>
 	:global(body) {
@@ -225,17 +338,24 @@
 		color: rgba(255, 248, 234, 0.88);
 	}
 
+	/*
+		Masonry gallery.
+	*/
 	.art-gallery {
 		columns: 2;
 		column-gap: clamp(1.4rem, 3vw, 2.25rem);
 	}
 
+	/*
+		No green backing behind individual pieces.
+
+		The thin cream frame separates each piece from the outer panel.
+	*/
 	.art-card {
 		width: 100%;
 		box-sizing: border-box;
 
-		display: inline-flex;
-		flex-direction: column;
+		display: inline-block;
 		vertical-align: top;
 
 		margin: 0 0 clamp(1.4rem, 3vw, 2.25rem);
@@ -244,11 +364,10 @@
 		overflow: hidden;
 
 		background: #f7eee3;
+		border: 2px solid rgba(247, 238, 227, 0.92);
+		border-radius: 20px;
 
-		border: 2px solid rgba(91, 72, 61, 0.72);
-		border-radius: 24px;
-
-		box-shadow: 0 10px 28px rgba(29, 39, 42, 0.13);
+		box-shadow: 0 9px 24px rgba(29, 39, 42, 0.15);
 
 		transition:
 			transform 0.2s ease,
@@ -257,20 +376,26 @@
 
 	.art-card:hover {
 		transform: translateY(-4px);
-		box-shadow: 0 16px 34px rgba(29, 39, 42, 0.19);
+		box-shadow: 0 15px 32px rgba(29, 39, 42, 0.22);
 	}
 
 	.art-image {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		position: relative;
 
-		padding: clamp(0.8rem, 2vw, 1.2rem);
+		width: 100%;
+		display: block;
 
-		background: #c4cdb2;
-		border-bottom: 2px solid rgba(91, 72, 61, 0.52);
+		margin: 0;
+		padding: 0;
+
+		background: transparent;
+		border: 0;
+
+		color: inherit;
+		text-align: left;
 
 		overflow: hidden;
+		cursor: pointer;
 	}
 
 	.art-image img {
@@ -278,35 +403,30 @@
 		height: auto;
 		display: block;
 
-		object-fit: contain;
-		border-radius: 14px;
-
-		transition: transform 0.3s ease;
+		transition:
+			transform 0.35s ease,
+			filter 0.35s ease;
 	}
 
-	.art-card:hover .art-image img {
-		transform: scale(1.012);
-	}
+	.art-overlay {
+		position: absolute;
+		inset: auto 0 0;
 
-	.art-image:focus-visible,
-	.art-link:focus-visible {
-		outline: 4px solid white;
-		outline-offset: 4px;
-	}
-
-	.art-caption {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: 1.25rem;
+		gap: 1rem;
 
-		padding: 1.2rem 1.4rem;
+		box-sizing: border-box;
+		width: 100%;
 
-		color: #3f4253;
-	}
+		padding: 2.6rem 1.15rem 1rem;
 
-	.art-category {
-		margin: 0 0 0.25rem;
+		background: linear-gradient(
+			to top,
+			rgba(26, 28, 27, 0.82),
+			rgba(26, 28, 27, 0)
+		);
 
 		font-family:
 			'Segoe UI',
@@ -315,15 +435,120 @@
 			Verdana,
 			sans-serif;
 
-		font-size: 0.75rem;
-		font-weight: 750;
-		letter-spacing: 0.09em;
-		text-transform: uppercase;
+		font-size: 0.95rem;
+		font-weight: 700;
 
-		color: #9a6878;
+		color: white;
+
+		opacity: 0;
+		transform: translateY(8px);
+
+		transition:
+			opacity 0.25s ease,
+			transform 0.25s ease;
 	}
 
-	h2 {
+	.art-overlay > span:last-child {
+		flex-shrink: 0;
+		font-size: 1.1rem;
+	}
+
+	.art-card:hover img {
+		transform: scale(1.025);
+		filter: brightness(0.91);
+	}
+
+	.art-card:hover .art-overlay,
+	.art-image:focus-visible .art-overlay {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.art-image:focus-visible {
+		outline: 4px solid white;
+		outline-offset: 4px;
+	}
+
+	/*
+		Fullscreen gallery.
+	*/
+	.lightbox {
+		position: fixed;
+		inset: 0;
+		z-index: 1000;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		box-sizing: border-box;
+		padding: clamp(1rem, 4vw, 3rem);
+
+		background: rgba(10, 11, 10, 0.94);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+	}
+
+	.lightbox-content {
+		width: min(1100px, calc(100vw - 10rem));
+		height: min(88vh, 900px);
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		min-width: 0;
+	}
+
+	.lightbox-image {
+		max-width: 100%;
+		max-height: calc(100% - 82px);
+
+		width: auto;
+		height: auto;
+
+		display: block;
+		object-fit: contain;
+
+		border-radius: 5px;
+
+		box-shadow: 0 22px 70px rgba(0, 0, 0, 0.5);
+	}
+
+	.lightbox-footer {
+		width: min(900px, 100%);
+
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 2rem;
+
+		box-sizing: border-box;
+		padding-top: 1.1rem;
+
+		color: white;
+	}
+
+	.lightbox-label {
+		margin: 0 0 0.18rem;
+
+		font-family:
+			'Segoe UI',
+			Tahoma,
+			Geneva,
+			Verdana,
+			sans-serif;
+
+		font-size: 0.68rem;
+		font-weight: 750;
+		letter-spacing: 0.13em;
+		text-transform: uppercase;
+
+		color: rgba(255, 255, 255, 0.55);
+	}
+
+	.lightbox-footer h2 {
 		margin: 0;
 
 		font-family:
@@ -333,24 +558,15 @@
 			'Trebuchet MS',
 			sans-serif;
 
-		font-size: clamp(1.4rem, 2.4vw, 2rem);
-		line-height: 1.15;
+		font-size: clamp(1.15rem, 2vw, 1.65rem);
+		font-weight: 500;
 
-		color: #3f4253;
+		color: rgba(255, 255, 255, 0.92);
 	}
 
-	.art-link {
+	.counter {
 		flex-shrink: 0;
-
-		display: inline-flex;
-		align-items: center;
-		gap: 0.4rem;
-
-		padding: 0.6rem 0.85rem;
-
-		background: #596b50;
-		border: 2px solid #465540;
-		border-radius: 999px;
+		margin: 0;
 
 		font-family:
 			'Segoe UI',
@@ -359,20 +575,87 @@
 			Verdana,
 			sans-serif;
 
-		font-size: 0.82rem;
-		font-weight: 750;
+		font-size: 0.85rem;
+		letter-spacing: 0.08em;
 
-		color: white;
-		text-decoration: none;
-
-		transition:
-			transform 0.18s ease,
-			background 0.18s ease;
+		color: rgba(255, 255, 255, 0.65);
 	}
 
-	.art-link:hover {
-		background: #6b7d61;
-		transform: translateY(-2px);
+	.close-button,
+	.gallery-arrow {
+		position: fixed;
+		z-index: 1002;
+
+		display: grid;
+		place-items: center;
+
+		margin: 0;
+		padding: 0;
+
+		background: rgba(255, 255, 255, 0.045);
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		border-radius: 999px;
+
+		color: rgba(255, 255, 255, 0.82);
+
+		cursor: pointer;
+
+		transition:
+			background 0.18s ease,
+			color 0.18s ease,
+			transform 0.18s ease;
+	}
+
+	.close-button:hover,
+	.gallery-arrow:hover {
+		background: rgba(255, 255, 255, 0.12);
+		color: white;
+	}
+
+	.close-button:focus-visible,
+	.gallery-arrow:focus-visible {
+		outline: 3px solid white;
+		outline-offset: 4px;
+	}
+
+	.close-button {
+		top: 1.25rem;
+		right: 1.25rem;
+
+		width: 44px;
+		height: 44px;
+
+		font-size: 1.9rem;
+		font-weight: 200;
+		line-height: 1;
+	}
+
+	.close-button:hover {
+		transform: rotate(3deg) scale(1.04);
+	}
+
+	.gallery-arrow {
+		top: 50%;
+		transform: translateY(-50%);
+
+		width: 52px;
+		height: 52px;
+
+		font-family: Georgia, serif;
+		font-size: 2.25rem;
+		line-height: 1;
+	}
+
+	.gallery-arrow:hover {
+		transform: translateY(-50%) scale(1.05);
+	}
+
+	.previous {
+		left: 1.25rem;
+	}
+
+	.next {
+		right: 1.25rem;
 	}
 
 	@media (max-width: 800px) {
@@ -389,6 +672,46 @@
 		.art-gallery {
 			columns: 1;
 		}
+
+		.lightbox {
+			padding: 4.5rem 1rem 1.25rem;
+		}
+
+		.lightbox-content {
+			width: 100%;
+			height: 100%;
+		}
+
+		.lightbox-image {
+			max-height: calc(100% - 95px);
+		}
+
+		.gallery-arrow {
+			top: auto;
+			bottom: 1.2rem;
+
+			width: 46px;
+			height: 46px;
+
+			transform: none;
+		}
+
+		.gallery-arrow:hover {
+			transform: scale(1.05);
+		}
+
+		.previous {
+			left: 1rem;
+		}
+
+		.next {
+			right: 1rem;
+		}
+
+		.lightbox-footer {
+			padding-right: 4rem;
+			padding-left: 4rem;
+		}
 	}
 
 	@media (max-width: 500px) {
@@ -404,29 +727,41 @@
 
 		.art-card {
 			margin-bottom: 1.2rem;
+			border-radius: 16px;
 		}
 
-		.art-image {
-			padding: 0.65rem;
+		.art-overlay {
+			padding: 2.25rem 1rem 0.85rem;
+			font-size: 0.88rem;
 		}
 
-		.art-caption {
-			align-items: flex-start;
-			flex-direction: column;
-			gap: 0.85rem;
-
-			padding: 1rem;
+		.lightbox-footer {
+			padding-right: 3.7rem;
+			padding-left: 3.7rem;
 		}
 
-		.art-link {
-			font-size: 0.78rem;
+		.lightbox-footer h2 {
+			font-size: 1.05rem;
+		}
+
+		.counter {
+			font-size: 0.76rem;
+		}
+	}
+
+	@media (hover: none) {
+		.art-overlay {
+			opacity: 1;
+			transform: translateY(0);
 		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
 		.art-card,
 		.art-image img,
-		.art-link {
+		.art-overlay,
+		.close-button,
+		.gallery-arrow {
 			transition: none;
 		}
 	}

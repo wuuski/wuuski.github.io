@@ -6,6 +6,64 @@
 			alt="Interactive picnic blanket portfolio"
 		/>
 
+		<!-- Decorative hover outlines -->
+		<img
+			class="item-outline now-outline"
+			src="/now-outline.png"
+			alt=""
+			aria-hidden="true"
+		/>
+
+		<img
+			class="item-outline blog-outline"
+			src="/blog-outline.png"
+			alt=""
+			aria-hidden="true"
+		/>
+
+		<img
+			class="item-outline work-outline"
+			src="/work-outline.png"
+			alt=""
+			aria-hidden="true"
+		/>
+
+		<img
+			class="item-outline art-outline"
+			src="/art-outline.png"
+			alt=""
+			aria-hidden="true"
+		/>
+
+		<img
+			class="item-outline contact-outline"
+			src="/contact-outline.png"
+			alt=""
+			aria-hidden="true"
+		/>
+
+		<img
+			class="item-outline resume-outline"
+			src="/resume-outline.png"
+			alt=""
+			aria-hidden="true"
+		/>
+
+		<img
+			class="item-outline reads-outline"
+			src="/reads-outline.png"
+			alt=""
+			aria-hidden="true"
+		/>
+
+		<img
+			class="item-outline photos-outline"
+			src="/photos-outline.png"
+			alt=""
+			aria-hidden="true"
+		/>
+
+		<!-- Blog -->
 		<a
 			class="hotspot blog"
 			href="https://grippyslide.bearblog.dev"
@@ -14,59 +72,61 @@
 			aria-label="Open Angela's blog"
 		></a>
 
+		<!-- Projects -->
 		<a
 			class="hotspot projects"
 			href="/projects"
 			aria-label="Open projects page"
 		></a>
 
+		<!-- Art portfolio -->
 		<a
 			class="hotspot portfolio"
 			href="/portfolio"
-			aria-label="Open portfolio page"
+			aria-label="Open art portfolio"
 		></a>
 
-    <a
-    class="hotspot contact"
-    href="/contact"
-    aria-label="Open contact page"
-    ></a>
+		<!-- Contact -->
+		<a
+			class="hotspot contact"
+			href="/contact"
+			aria-label="Open contact page"
+		></a>
 
-    <a
-    class="hotspot resume"
-    href="/resume.pdf"
-    aria-label="Open resume page"
-    ></a>
+		<!-- Resume -->
+		<a
+			class="hotspot resume"
+			href="/resume.pdf"
+			aria-label="Open resume"
+		></a>
 
-    <a
-    class="hotspot now"
-    href="/now"
-    aria-label="Open now page"
-    ></a>
+		<!-- Upper half of character -->
+		<a
+			class="hotspot now"
+			href="/now"
+			aria-label="Open now page"
+		></a>
 
-    <a
-    class="hotspot now2"
-    href="/now"
-    aria-label="Open now page"
-    ></a>
+		<!-- Lower half of character -->
+		<a
+			class="hotspot now2"
+			href="/now"
+			aria-label="Open now page"
+		></a>
 
-    <a
-    class="hotspot reads"
-    href="/now"
-    aria-label="Open books page"
-    ></a>
+		<!-- Reads -->
+		<a
+			class="hotspot reads"
+			href="/reads"
+			aria-label="Open books and reading page"
+		></a>
 
-    <a
-    class="hotspot photo"
-    href="/photos"
-    aria-label="Open photo page"
-    ></a>
-
-    <a
-    class="hotspot guestbook"
-    href="/now"
-    aria-label="Open guestbook"
-    ></a>
+		<!-- Photos -->
+		<a
+			class="hotspot photo"
+			href="/photos"
+			aria-label="Open photo page"
+		></a>
 	</div>
 </section>
 
@@ -93,40 +153,183 @@
 	}
 
 	.blanket {
+		position: relative;
+		z-index: 1;
+
+		display: block;
 		width: 100%;
 		height: auto;
-		display: block;
 	}
+
+	/* ================================= */
+	/* Shared outline styling            */
+	/* ================================= */
+
+	.item-outline {
+		position: absolute;
+		z-index: 4;
+
+		height: auto;
+		opacity: 0;
+
+		pointer-events: none;
+		user-select: none;
+
+		transform: scale(0.99);
+		transform-origin: center;
+
+		transition:
+			opacity 160ms ease,
+			transform 160ms ease;
+	}
+
+	/* ================================= */
+	/* Individual outline positioning    */
+	/* ================================= */
+
+	/*
+		If an outline is slightly misaligned, adjust only its
+		left, top, and width values in this section.
+	*/
+
+	.now-outline {
+		left: 11.2%;
+		top: 14%;
+		width: 36%;
+	}
+
+	.blog-outline {
+		left: 40.5%;
+		top: 43%;
+		width: 10.5%;
+	}
+
+	.work-outline {
+		left: 55%;
+		top: 39.5%;
+		width: 16%;
+	}
+
+	.art-outline {
+		left: 41%;
+		top: 58%;
+		width: 17%;
+	}
+
+	.contact-outline {
+		left: 71%;
+		top: 30.25%;
+		width: 15.5%;
+	}
+
+	.resume-outline {
+		left: 65%;
+		top: 55.75%;
+		width: 16.75%;
+	}
+
+	.reads-outline {
+		left: 48%;
+		top: 22.5%;
+		width: 13%;
+	}
+
+	.photos-outline {
+		left: 64%;
+		top: 16%;
+		width: 14%;
+	}
+
+	/* ================================= */
+	/* Reveal outlines on hover/focus    */
+	/* ================================= */
+
+	/* Either character hotspot reveals the full character outline. */
+	.scene:has(.now:hover) .now-outline,
+	.scene:has(.now2:hover) .now-outline,
+	.scene:has(.now:focus-visible) .now-outline,
+	.scene:has(.now2:focus-visible) .now-outline,
+
+	/* Blog */
+	.scene:has(.blog:hover) .blog-outline,
+	.scene:has(.blog:focus-visible) .blog-outline,
+
+	/* Projects */
+	.scene:has(.projects:hover) .work-outline,
+	.scene:has(.projects:focus-visible) .work-outline,
+
+	/* Art */
+	.scene:has(.portfolio:hover) .art-outline,
+	.scene:has(.portfolio:focus-visible) .art-outline,
+
+	/* Contact */
+	.scene:has(.contact:hover) .contact-outline,
+	.scene:has(.contact:focus-visible) .contact-outline,
+
+	/* Resume */
+	.scene:has(.resume:hover) .resume-outline,
+	.scene:has(.resume:focus-visible) .resume-outline,
+
+	/* Reads */
+	.scene:has(.reads:hover) .reads-outline,
+	.scene:has(.reads:focus-visible) .reads-outline,
+
+	/* Photos */
+	.scene:has(.photo:hover) .photos-outline,
+	.scene:has(.photo:focus-visible) .photos-outline {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	/* ================================= */
+	/* Hotspot base styling              */
+	/* ================================= */
 
 	.hotspot {
 		position: absolute;
-		display: block;
 		z-index: 5;
-		cursor: pointer;
 
-    /* background: rgba(255, 0, 0, 0.4);
-	  border: 2px solid red; */
+		display: block;
 
 		background: transparent;
 		border: none;
 		border-radius: 12px;
+
+		cursor: pointer;
+		-webkit-tap-highlight-color: transparent;
 	}
 
-  .now {
+	/*
+		Temporarily uncomment this while adjusting click areas:
+
+	.hotspot {
+		background: rgba(255, 0, 0, 0.35);
+		border: 2px solid red;
+	}
+	*/
+
+	/* ================================= */
+	/* Character / Now hotspots          */
+	/* ================================= */
+
+	.now {
 		left: 23%;
 		top: 20%;
 		width: 17%;
 		height: 30%;
 	}
 
-  .now2 {
+	.now2 {
 		left: 17%;
 		top: 50%;
 		width: 17%;
 		height: 30%;
 	}
 
-  
+	/* ================================= */
+	/* Object hotspots                   */
+	/* ================================= */
+
 	.blog {
 		left: 42%;
 		top: 45%;
@@ -148,45 +351,81 @@
 		height: 14%;
 	}
 
-  .contact {
+	.contact {
 		left: 72%;
 		top: 34%;
 		width: 13%;
 		height: 12%;
 	}
 
-  .resume {
+	.resume {
 		left: 67%;
 		top: 58%;
 		width: 12%;
 		height: 12%;
 	}
 
-  .reads {
-		left: 46%;
+	.reads {
+		left: 49%;
 		top: 25%;
-		width: 9%;
+		width: 10%;
 		height: 12%;
 	}
 
-  .photo {
-		left: 58%;
+	.photo {
+		left: 65%;
 		top: 16%;
-		width: 11%;
+		width: 11.5%;
 		height: 12%;
 	}
 
-  .guestbook {
-		left: 74%;
-		top: 16%;
-		width: 11%;
-		height: 12%;
+	/* ================================= */
+	/* Keyboard focus                    */
+	/* ================================= */
+
+	/*
+		The imported PNG outlines act as the visible keyboard-focus
+		indicators, so the browser's rectangular outlines are removed.
+	*/
+
+	.now:focus-visible,
+	.now2:focus-visible,
+	.blog:focus-visible,
+	.projects:focus-visible,
+	.portfolio:focus-visible,
+	.contact:focus-visible,
+	.resume:focus-visible,
+	.reads:focus-visible,
+	.photo:focus-visible {
+		outline: none;
 	}
 
+	/* Respect reduced-motion preferences. */
+	@media (prefers-reduced-motion: reduce) {
+		.item-outline {
+			transition: none;
+			transform: none;
+		}
 
-	.hotspot:hover,
-	.hotspot:focus-visible {
-		outline: 3px solid white;
-		outline-offset: 4px;
+		.scene:has(.now:hover) .now-outline,
+		.scene:has(.now2:hover) .now-outline,
+		.scene:has(.now:focus-visible) .now-outline,
+		.scene:has(.now2:focus-visible) .now-outline,
+		.scene:has(.blog:hover) .blog-outline,
+		.scene:has(.blog:focus-visible) .blog-outline,
+		.scene:has(.projects:hover) .work-outline,
+		.scene:has(.projects:focus-visible) .work-outline,
+		.scene:has(.portfolio:hover) .art-outline,
+		.scene:has(.portfolio:focus-visible) .art-outline,
+		.scene:has(.contact:hover) .contact-outline,
+		.scene:has(.contact:focus-visible) .contact-outline,
+		.scene:has(.resume:hover) .resume-outline,
+		.scene:has(.resume:focus-visible) .resume-outline,
+		.scene:has(.reads:hover) .reads-outline,
+		.scene:has(.reads:focus-visible) .reads-outline,
+		.scene:has(.photo:hover) .photos-outline,
+		.scene:has(.photo:focus-visible) .photos-outline {
+			transform: none;
+		}
 	}
 </style>

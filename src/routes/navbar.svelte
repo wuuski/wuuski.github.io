@@ -1,11 +1,11 @@
 <script>
 	let links = [
-		
+		{ name: "Now", href: "/now" },
         { name: "Projects", href: "/projects" },
 		{ name: "Art", href: "/portfolio" },
         { name: "Photo", href: "/photos" },
         { name: "Blog", href: "https://grippyslide.bearblog.dev", external: true },
-        { name: "Resume", href: "/resume.pdf"},
+        { name: "Resume", href: "/resume.pdf", external: true },
         { name: "Contact", href: "/contact" },
 		
 		// { name: "Contact", href: "/contact" }
