@@ -3,62 +3,80 @@
 	import { onDestroy } from 'svelte';
 	import { fade, scale, slide } from 'svelte/transition';
 
-	const artworks = [
+	const photos = [
 		{
-			title: 'Grandpas Garden',
-			image: '/grandpapatio.png',
-			alt: 'A colorful painting of a sunlit garden and wooden patio'
+			title: 'Artist’s Corner',
+			image: '/artstation.jpg',
+			alt: 'A warmly lit artist workspace beside an open blue window',
+			orientation: 'portrait'
 		},
 		{
-			title: 'Edgar',
-			image: '/Edgar.png',
-			alt: 'Watercolor painting of an orange cat lying beside a person'
+			title: 'Takeoff',
+			image: '/birdfountain.jpg',
+			alt: 'A small bird lifting away from a fountain with water splashing beneath it',
+			orientation: 'landscape'
 		},
 		{
-			title: 'The Cozy Hole-in-the-Tree',
-			image: '/The Cozy Hole-in-the-Tree.png',
-			alt: 'Digital painting of a magical home built into a forest tree'
+			title: 'In Motion',
+			image: '/dancers.jpg',
+			alt: 'Traditional dancers performing in colorful embroidered clothing',
+			orientation: 'landscape'
 		},
 		{
-			title: 'Scientists’ Refuge',
-			image: "/Scientists' Refuge.png",
-			alt: 'Digital painting titled Scientists’ Refuge'
+			title: 'Gulls',
+			image: '/gulls.jpg',
+			alt: 'Two gulls standing near the water, one holding a crab',
+			orientation: 'landscape'
 		},
 		{
-			title: 'Betty',
-			image: '/Betty.png',
-			alt: 'Painted portrait titled Betty'
+			title: 'Old Town',
+			image: '/oldtown.jpg',
+			alt: 'A sunlit old-town street lined with shops and hanging signs',
+			orientation: 'landscape'
 		},
 		{
-			title: 'Angela',
-			image: '/Angela.png',
-			alt: 'Graphite portrait titled Angela'
+			title: 'Do You Remember?',
+			image: '/porter.jpg',
+			alt: 'A concert stage illuminated in blue light with text projected behind the performers',
+			orientation: 'landscape'
 		},
 		{
-			title: 'The Shell',
-			image: '/The Shell.png',
-			alt: 'Digital painting of a restaurant inside a giant shell'
+			title: 'Terracotta',
+			image: '/terracotta.jpg',
+			alt: 'Rows of Terracotta Army figures viewed from above',
+			orientation: 'landscape'
 		},
 		{
-			title: 'Memory Project',
-			image: '/girlpainting.png',
-			alt: 'Painted portrait of a girl'
+			title: 'Drifting',
+			image: '/drifting.jpg',
+			alt: 'A person drifting in the ocean on an inflatable device at night',
+			orientation: 'landscape'
 		},
 		{
-			title: 'Misha',
-			image: '/mishpainting.png',
-			alt: 'Painted portrait titled Misha'
+			title: 'Village View',
+			image: '/village.jpg',
+			alt: 'A balcony overlooking a mountain village under a blue sky',
+			orientation: 'landscape'
+		},
+		{
+			title: 'Waterfall',
+			image: '/waterfall.jpg',
+			alt: 'A small waterfall surrounded by dense greenery and lily pads',
+			orientation: 'landscape'
+		},
+		{
+			title: 'After Hours',
+			image: '/shop.jpg',
+			alt: 'A dimly lit shop interior with colorful papel picado decorations',
+			orientation: 'landscape'
 		}
 	];
 
 	let selectedIndex = null;
 
-	$: selectedArtwork =
-		selectedIndex === null ? null : artworks[selectedIndex];
+	$: selectedPhoto =
+		selectedIndex === null ? null : photos[selectedIndex];
 
-	/*
-		Prevent the page behind the lightbox from scrolling.
-	*/
 	$: if (browser) {
 		document.body.style.overflow =
 			selectedIndex === null ? '' : 'hidden';
@@ -70,11 +88,11 @@
 		}
 	});
 
-	function openArtwork(index) {
+	function openPhoto(index) {
 		selectedIndex = index;
 	}
 
-	function closeArtwork() {
+	function closePhoto() {
 		selectedIndex = null;
 	}
 
@@ -82,20 +100,20 @@
 		if (selectedIndex === null) return;
 
 		selectedIndex =
-			(selectedIndex - 1 + artworks.length) % artworks.length;
+			(selectedIndex - 1 + photos.length) % photos.length;
 	}
 
 	function showNext() {
 		if (selectedIndex === null) return;
 
-		selectedIndex = (selectedIndex + 1) % artworks.length;
+		selectedIndex = (selectedIndex + 1) % photos.length;
 	}
 
 	function handleKeydown(event) {
 		if (selectedIndex === null) return;
 
 		if (event.key === 'Escape') {
-			closeArtwork();
+			closePhoto();
 		}
 
 		if (event.key === 'ArrowLeft') {
@@ -111,56 +129,57 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
-	<title>Art | Angela Wu</title>
+	<title>Photography | Angela Wu</title>
 
 	<meta
 		name="description"
-		content="A selection of artwork and illustrations created by Angela Wu."
+		content="A collection of photographs by Angela Wu capturing quiet moments, movement, wildlife, and places."
 	/>
 </svelte:head>
 
-<main class="art-page">
+<main class="photo-page">
 	<section
-		class="art-panel"
+		class="photo-panel"
 		in:slide={{
 			duration: 850,
 			delay: 120
 		}}
 	>
 		<header class="page-header">
-			<p class="eyebrow">Selected work</p>
+			<p class="eyebrow">Selected photographs</p>
 
-			<h1>Art</h1>
+			<h1>Photos</h1>
 
 			<p class="intro">
-				I’ve loved making visual art for as long as I can remember. Here are
-				some of my favorite paintings and illustrations from over the years.
+				A collection of moments, places, and little details that made me stop
+				and look twice.
 			</p>
 		</header>
 
-		<div class="art-gallery">
-			{#each artworks as artwork, index}
+		<div class="photo-gallery">
+			{#each photos as photo, index}
 				<figure
-					class="art-card"
+					class="photo-card"
+					class:portrait={photo.orientation === 'portrait'}
 					in:slide={{
 						duration: 600,
-						delay: 220 + index * 90
+						delay: 220 + index * 80
 					}}
 				>
 					<button
-						class="art-image"
+						class="photo-image"
 						type="button"
-						on:click={() => openArtwork(index)}
-						aria-label={`Open ${artwork.title} in gallery`}
+						on:click={() => openPhoto(index)}
+						aria-label={`Open ${photo.title} in gallery`}
 					>
 						<img
-							src={artwork.image}
-							alt={artwork.alt}
-							loading={index > 1 ? 'lazy' : 'eager'}
+							src={photo.image}
+							alt={photo.alt}
+							loading={index > 2 ? 'lazy' : 'eager'}
 						/>
 
-						<span class="art-overlay">
-							<span>{artwork.title}</span>
+						<span class="photo-overlay">
+							<span>{photo.title}</span>
 							<span aria-hidden="true">↗</span>
 						</span>
 					</button>
@@ -170,20 +189,20 @@
 	</section>
 </main>
 
-{#if selectedArtwork}
+{#if selectedPhoto}
 	<div
 		class="lightbox"
 		role="dialog"
 		aria-modal="true"
-		aria-label={`Viewing ${selectedArtwork.title}`}
-		on:click={closeArtwork}
+		aria-label={`Viewing ${selectedPhoto.title}`}
+		on:click={closePhoto}
 		in:fade={{ duration: 180 }}
 		out:fade={{ duration: 150 }}
 	>
 		<button
 			class="close-button"
 			type="button"
-			on:click|stopPropagation={closeArtwork}
+			on:click|stopPropagation={closePhoto}
 			aria-label="Close gallery"
 		>
 			<span aria-hidden="true">×</span>
@@ -193,7 +212,7 @@
 			class="gallery-arrow previous"
 			type="button"
 			on:click|stopPropagation={showPrevious}
-			aria-label="View previous artwork"
+			aria-label="View previous photo"
 		>
 			<span aria-hidden="true">‹</span>
 		</button>
@@ -208,18 +227,18 @@
 		>
 			<img
 				class="lightbox-image"
-				src={selectedArtwork.image}
-				alt={selectedArtwork.alt}
+				src={selectedPhoto.image}
+				alt={selectedPhoto.alt}
 			/>
 
 			<div class="lightbox-footer">
 				<div>
-					<p class="lightbox-label">Selected artwork</p>
-					<h2>{selectedArtwork.title}</h2>
+					<p class="lightbox-label">Selected photograph</p>
+					<h2>{selectedPhoto.title}</h2>
 				</div>
 
 				<p class="counter">
-					{selectedIndex + 1} / {artworks.length}
+					{selectedIndex + 1} / {photos.length}
 				</p>
 			</div>
 		</div>
@@ -228,7 +247,7 @@
 			class="gallery-arrow next"
 			type="button"
 			on:click|stopPropagation={showNext}
-			aria-label="View next artwork"
+			aria-label="View next photo"
 		>
 			<span aria-hidden="true">›</span>
 		</button>
@@ -240,7 +259,7 @@
 		margin: 0;
 	}
 
-	.art-page {
+	.photo-page {
 		min-height: 100vh;
 		box-sizing: border-box;
 
@@ -261,7 +280,7 @@
 		background-attachment: fixed;
 	}
 
-	.art-panel {
+	.photo-panel {
 		width: min(1320px, 100%);
 		margin: 0 auto;
 		box-sizing: border-box;
@@ -338,27 +357,19 @@
 		color: rgba(255, 248, 234, 0.88);
 	}
 
-	/*
-		Masonry gallery.
-	*/
-	.art-gallery {
-		columns: 2;
-		column-gap: clamp(1.4rem, 3vw, 2.25rem);
+	.photo-gallery {
+		columns: 3;
+		column-gap: clamp(1rem, 2.5vw, 1.75rem);
 	}
 
-	/*
-		No green backing behind individual pieces.
-
-		The thin cream frame separates each piece from the outer panel.
-	*/
-	.art-card {
+	.photo-card {
 		width: 100%;
 		box-sizing: border-box;
 
 		display: inline-block;
 		vertical-align: top;
 
-		margin: 0 0 clamp(1.4rem, 3vw, 2.25rem);
+		margin: 0 0 clamp(1rem, 2.5vw, 1.75rem);
 
 		break-inside: avoid;
 		overflow: hidden;
@@ -374,12 +385,12 @@
 			box-shadow 0.2s ease;
 	}
 
-	.art-card:hover {
+	.photo-card:hover {
 		transform: translateY(-4px);
 		box-shadow: 0 15px 32px rgba(29, 39, 42, 0.22);
 	}
 
-	.art-image {
+	.photo-image {
 		position: relative;
 
 		width: 100%;
@@ -398,7 +409,7 @@
 		cursor: pointer;
 	}
 
-	.art-image img {
+	.photo-image img {
 		width: 100%;
 		height: auto;
 		display: block;
@@ -408,7 +419,7 @@
 			filter 0.35s ease;
 	}
 
-	.art-overlay {
+	.photo-overlay {
 		position: absolute;
 		inset: auto 0 0;
 
@@ -448,30 +459,27 @@
 			transform 0.25s ease;
 	}
 
-	.art-overlay > span:last-child {
+	.photo-overlay > span:last-child {
 		flex-shrink: 0;
 		font-size: 1.1rem;
 	}
 
-	.art-card:hover img {
+	.photo-card:hover img {
 		transform: scale(1.025);
 		filter: brightness(0.91);
 	}
 
-	.art-card:hover .art-overlay,
-	.art-image:focus-visible .art-overlay {
+	.photo-card:hover .photo-overlay,
+	.photo-image:focus-visible .photo-overlay {
 		opacity: 1;
 		transform: translateY(0);
 	}
 
-	.art-image:focus-visible {
+	.photo-image:focus-visible {
 		outline: 4px solid white;
 		outline-offset: 4px;
 	}
 
-	/*
-		Fullscreen gallery.
-	*/
 	.lightbox {
 		position: fixed;
 		inset: 0;
@@ -490,8 +498,8 @@
 	}
 
 	.lightbox-content {
-		width: min(1100px, calc(100vw - 10rem));
-		height: min(88vh, 900px);
+		width: min(1200px, calc(100vw - 10rem));
+		height: min(88vh, 920px);
 
 		display: flex;
 		flex-direction: column;
@@ -517,7 +525,7 @@
 	}
 
 	.lightbox-footer {
-		width: min(900px, 100%);
+		width: min(1000px, 100%);
 
 		display: flex;
 		align-items: flex-end;
@@ -658,19 +666,21 @@
 		right: 1.25rem;
 	}
 
+	@media (max-width: 1000px) {
+		.photo-gallery {
+			columns: 2;
+		}
+	}
+
 	@media (max-width: 800px) {
-		.art-page {
+		.photo-page {
 			padding-top: 7rem;
 			background-attachment: scroll;
 		}
 
-		.art-panel {
+		.photo-panel {
 			padding: 1rem;
 			border-radius: 22px;
-		}
-
-		.art-gallery {
-			columns: 1;
 		}
 
 		.lightbox {
@@ -714,8 +724,14 @@
 		}
 	}
 
+	@media (max-width: 600px) {
+		.photo-gallery {
+			columns: 1;
+		}
+	}
+
 	@media (max-width: 500px) {
-		.art-page {
+		.photo-page {
 			padding-right: 0.65rem;
 			padding-left: 0.65rem;
 			padding-bottom: 2rem;
@@ -725,12 +741,12 @@
 			margin-bottom: 1.4rem;
 		}
 
-		.art-card {
+		.photo-card {
 			margin-bottom: 1.2rem;
 			border-radius: 16px;
 		}
 
-		.art-overlay {
+		.photo-overlay {
 			padding: 2.25rem 1rem 0.85rem;
 			font-size: 0.88rem;
 		}
@@ -750,16 +766,16 @@
 	}
 
 	@media (hover: none) {
-		.art-overlay {
+		.photo-overlay {
 			opacity: 1;
 			transform: translateY(0);
 		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.art-card,
-		.art-image img,
-		.art-overlay,
+		.photo-card,
+		.photo-image img,
+		.photo-overlay,
 		.close-button,
 		.gallery-arrow {
 			transition: none;

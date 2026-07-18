@@ -1,8 +1,12 @@
 <script>
 	let links = [
-		{ name: "Home", href: "/" },
+		{ name: "Now", href: "/now" },
         { name: "Projects", href: "/projects" },
-		{ name: "Portfolio", href: "/portfolio" },
+		{ name: "Art", href: "/portfolio" },
+        { name: "Photo", href: "/photos" },
+        { name: "Blog", href: "https://grippyslide.bearblog.dev", external: true },
+        { name: "Resume", href: "/resume.pdf", external: true },
+        { name: "Contact", href: "/contact" },
 		
 		// { name: "Contact", href: "/contact" }
 	];
@@ -17,88 +21,156 @@
     </a>
 	<ul class="nav-links">
 		{#each links as link}
-			<li><a href={link.href}>{link.name}</a></li>
+			<li><a href={link.href}
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noopener noreferrer" : undefined}>{link.name}</a></li>
 		{/each}
 	</ul>
 </nav>
 
 <style>
-	.navbar {
-		
+    .navbar {
+        position: fixed;
+        top: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+    
+        width: min(94vw, 1500px);
+        box-sizing: border-box;
+    
         display: flex;
-        flex-wrap: nowrap;
-		justify-content: space-between;
-		align-items: center;
-		padding: 1rem 2rem;
-		background-color: #4c556e;
-		color: white;
-        margin-bottom: 20px;
-        border-radius:20px;
-        margin-left: 2rem;
-        margin-right: 2rem;
-        border-color: rgb(59, 51, 38);
-        border-width: 3px;
-	}
-
-	.logo {
-
+        justify-content: space-between;
+        align-items: center;
+    
+        padding: 0.75rem 1.5rem;
+    
+        background: rgba(76, 85, 110, 0.28);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    
+        border: 2px solid rgba(59, 51, 38, 0.45);
+        border-radius: 20px;
+    
+        z-index: 100;
+    }
+    
+    .logo {
         display: flex;
-        flex-wrap: nowrap;
-		justify-content: space-between;
-		font-size: 3rem;
-		font-weight: bold;
+        align-items: center;
+        gap: 0.9rem;
+    
+        font-size: clamp(1.4rem, 2vw, 2.2rem);
+        font-weight: bold;
+    
+        color: white;
+        text-decoration: none;
+    
         transition: color 0.2s ease;
-        margin-left:3rem;
-	}
-    .logo img { 
-        height:70px;
-        width:auto;
-        object-fit: contain;
-        margin-right: 25px;
     }
-    .logo img:hover { 
-        opacity: 80%;
-    }
-
+    
     .logo:hover {
-		color: #f0a500;
-	}
-  
-
-	.nav-links {
-		list-style: none;
-		display: flex;
-		gap: 1.5rem;
-        margin-right:3rem;
-	}
-
-	.nav-links a {
-		color: white;
-		text-decoration: none;
-		transition: color 0.2s ease;
-        font-size: 1.5rem;
-	}
-
-	.nav-links a:hover {
-		color: #f0a500;
-	}
-
-@media (max-width: 900px) {
-    /* .logo{
-    flex-direction: column;
-    align-items: center;
-  } */
-  /* .flex-item-projects,
-  .flex-item{
-    flex: none;
-    width: 100%;
-    max-width: 520px;   
-  } */
-  .nav-links {
-    opacity: 0;
-    pointer-events: none;
-    height: 0;
-    overflow: hidden;
-  }
-}
-</style>
+        color: #f0a500;
+    }
+    
+    .logo img {
+        height: clamp(38px, 3.5vw, 56px);
+        width: auto;
+        display: block;
+    }
+    
+    .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: clamp(1rem, 1.1vw, 1.25rem);
+    
+        transition: color 0.2s ease;
+    }
+    
+    .nav-links a:hover {
+        color: #f0a500;
+    }
+    
+    /* ---------- Tablet ---------- */
+    
+    @media (max-width: 900px) {
+    
+        .navbar {
+            padding: 0.65rem 1rem;
+            width: 96vw;
+        }
+    
+        .logo {
+            font-size: 1.5rem;
+        }
+    
+        .logo img {
+            height: 42px;
+        }
+    
+        .nav-links {
+            gap: 1rem;
+        }
+    
+        .nav-links a {
+            font-size: 0.95rem;
+        }
+    }
+    
+    /* ---------- Phone ---------- */
+    
+    @media (max-width: 650px) {
+    
+        .navbar {
+            padding: 0.6rem 0.9rem;
+        }
+    
+        .logo {
+            font-size: 1.2rem;
+        }
+    
+        .logo img {
+            height: 34px;
+        }
+    
+        .nav-links {
+            display: none;
+        }
+    }
+    
+    /* ---------- Extremely small viewport
+       (very small window OR massive browser zoom)
+    ----------------------------------------- */
+    
+    @media (max-width: 450px), (max-height: 450px) {
+    
+        .navbar {
+            top: 0.4rem;
+            width: 96vw;
+            padding: 0.45rem 0.7rem;
+            border-radius: 14px;
+        }
+    
+        .logo {
+            font-size: 0.95rem;
+        }
+    
+        .logo img {
+            height: 26px;
+        }
+    
+        .nav-links {
+            display: none;
+        }
+    }
+    
+    </style>

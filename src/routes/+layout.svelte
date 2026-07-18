@@ -11,7 +11,7 @@
     :global(body) {
         /* display: flex; */
         height: 100vh;
-        background-color:#101829;
+        background-color:#a6c879;
         /*background-image: url('picnicblanket.png');*/
         background-repeat: no-repeat;
         
