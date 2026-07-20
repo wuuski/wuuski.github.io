@@ -1,3 +1,6 @@
+<svelte:head>
+  <title>Angela Wu</title>
+</svelte:head>
 <script lang="ts">
 	import '../app.css';
 	import './navbar.svelte'; 

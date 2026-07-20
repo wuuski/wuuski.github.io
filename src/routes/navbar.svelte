@@ -16,7 +16,7 @@
    
     <a href="/">
 	<div class="logo">
-        <img src="/favicon.png" alt="pixel art moon">  Angela Wu
+        <img src="/favicon.png" alt="diplocaulus logo">  Angela Wu
     </div>
     </a>
 	<ul class="nav-links">
