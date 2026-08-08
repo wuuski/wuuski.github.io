@@ -131,17 +131,17 @@
 	<div class="cal-webring">
 		<a
 			class="webring-arrow"
-			href="https://cal-webring.vercel.app/prev?current=https%3A%2F%2Fangelawu.dev"
+			href="https://calwebring.com/prev?current=https%3A%2F%2Fangelawu.dev"
 			aria-label="Previous site in Cal Webring"
 		>
 			←
 		</a>
 
 		<a
-			href="https://cal-webring.vercel.app/"
+			href="https://calwebring.com/"
 			>
 		<img
-			src="https://cal-webring.vercel.app/badge.png"
+			src="https://calwebring.com/badge.png"
 			alt=""
 			aria-hidden="true"
 		/></a>
@@ -159,7 +159,7 @@
 	
 		<a
 			class="webring-arrow"
-			href="https://cal-webring.vercel.app/next?current=https%3A%2F%2Fangelawu.dev"
+			href="https://calwebring.com/next?current=https%3A%2F%2Fangelawu.dev"
 			aria-label="Next site in Cal Webring"
 		>
 			→
