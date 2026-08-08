@@ -1,20 +1,17 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	/*
-		Replace these two values with your real contact information.
-	*/
 	const contactEmail = 'angela_wu@berkeley.edu';
 	const linkedInUrl = 'https://www.linkedin.com/in/angelawu07';
 
 	const contactMethods = [
-		{
-			label: 'Email',
-			value: contactEmail,
-			href: `mailto:${contactEmail}`,
-			description: 'The best way to reach me directly.',
-			external: false
-		},
+		// {
+		// 	label: 'Email',
+		// 	value: contactEmail,
+		// 	href: `mailto:${contactEmail}`,
+		// 	description: 'The best way to reach me directly.',
+		// 	external: false
+		// },
 		{
 			label: 'LinkedIn',
 			value: 'Connect with me',
@@ -30,10 +27,10 @@
 			external: true
 		},
 		{
-			label: 'Blog',
-			value: 'Grippy Slide',
-			href: 'https://grippyslide.bearblog.dev',
-			description: 'Writing, reflections, and miscellaneous thoughts.',
+			label: 'Instagram',
+			value: '@angelaisbig',
+			href: 'https://www.instagram.com/angelaisbig/',
+			description: 'always eating',
 			external: true
 		}
 	];
@@ -68,76 +65,53 @@
 		</header>
 
 		<div class="contact-layout">
-			<article class="letter-card">
-				<div class="letter-heading">
-					<div class="envelope-icon" aria-hidden="true">✉</div>
+			<div class="note-area">
+				<div class="blob blob-main" aria-hidden="true"></div>
+				<div class="blob blob-shadow" aria-hidden="true"></div>
 
-					<div>
-						<p class="card-label">A note from me</p>
-						<h2>Thanks for stopping by!</h2>
-					</div>
-				</div>
-
-				<div class="letter-copy">
-					<p>
-						I’m Angela, a Data Science student at UC Berkeley interested in
-						machine learning, computer vision, visual design, and building
-						thoughtful digital experiences.
-					</p>
-
-					<p>
-						I’m always excited to meet people working on meaningful research,
-						creative technology, education, and whimsy internet projects.
-					</p>
-				</div>
-
-				<div class="interests">
-					<p class="card-label">I’m especially happy to hear about</p>
-
-					<ul>
-						<li>Machine learning and data science opportunities</li>
-						<li>Research and interdisciplinary collaborations</li>
-						<li>Creative coding, design, and art projects</li>
-						<li>Startups and tools that help people do meaningful work</li>
-					</ul>
-				</div>
-
-				<a class="primary-button" href={`mailto:${contactEmail}`}>
-					Send me an email
-					<span aria-hidden="true">↗</span>
+				<a
+					class="contact-note"
+					href={`mailto:${contactEmail}`}
+					aria-label={`Email Angela at ${contactEmail}`}
+				>
+					<img
+						src="/paper-planes.png"
+						alt="Hand-drawn note from Angela introducing herself and inviting visitors to email her"
+					/>
 				</a>
-			</article>
 
-			<div class="contact-methods">
-				{#each contactMethods as method, index}
-					<a
-						class="contact-card"
-						href={method.href}
-						target={method.external ? '_blank' : undefined}
-						rel={method.external ? 'noopener noreferrer' : undefined}
-						in:slide={{
-							duration: 550,
-							delay: 240 + index * 90
-						}}
-					>
-						<div class="contact-card-top">
-							<p class="contact-label">{method.label}</p>
-							<span aria-hidden="true">↗</span>
-						</div>
+				<div class="doodle doodle-one" aria-hidden="true">♡</div>
+				<div class="doodle doodle-two" aria-hidden="true">✦</div>
+				<div class="doodle doodle-three" aria-hidden="true">⋆</div>
+			</div>
 
-						<h2>{method.value}</h2>
-						<p>{method.description}</p>
-					</a>
-				{/each}
+			<div class="methods-area">
+				<div class="blob blob-right" aria-hidden="true"></div>
+
+				<div class="contact-methods">
+					{#each contactMethods as method, index}
+						<a
+							class="contact-card"
+							href={method.href}
+							target={method.external ? '_blank' : undefined}
+							rel={method.external ? 'noopener noreferrer' : undefined}
+							in:slide={{
+								duration: 550,
+								delay: 240 + index * 90
+							}}
+						>
+							<div class="contact-card-top">
+								<p class="contact-label">{method.label}</p>
+								<span aria-hidden="true">↗</span>
+							</div>
+
+							<h2>{method.value}</h2>
+							<p>{method.description}</p>
+						</a>
+					{/each}
+				</div>
 			</div>
 		</div>
-
-		<footer class="contact-footer">
-			<p>
-				Thanks for visiting my little corner of the internet. I’ll try to respond
-				as soon as I can ☕️
-			</p>
-		</footer>
 	</section>
 </main>
 
@@ -168,7 +142,10 @@
 	}
 
 	.contact-panel {
-		width: min(1180px, 100%);
+		position: relative;
+		isolation: isolate;
+
+		width: min(1240px, 100%);
 		margin: 0 auto;
 		box-sizing: border-box;
 
@@ -183,9 +160,14 @@
 		border-radius: 28px;
 
 		box-shadow: 0 18px 45px rgba(35, 49, 42, 0.18);
+
+		overflow: hidden;
 	}
 
 	.page-header {
+		position: relative;
+		z-index: 5;
+
 		max-width: 700px;
 		margin: 0 auto clamp(1.8rem, 4vw, 2.6rem);
 
@@ -245,74 +227,145 @@
 	}
 
 	.contact-layout {
+		position: relative;
+		z-index: 2;
+
 		display: grid;
-		grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+		grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
 		gap: clamp(1.4rem, 3vw, 2.25rem);
-		align-items: stretch;
+		align-items: center;
 	}
 
-	.letter-card {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
+	.note-area {
+		position: relative;
+		isolation: isolate;
 
-		padding: clamp(1.5rem, 4vw, 2.6rem);
-
-		background: #f7eee3;
-		border: 2px solid rgba(91, 72, 61, 0.72);
-		border-radius: 24px;
-
-		color: #3f4253;
-
-		box-shadow: 0 10px 28px rgba(29, 39, 42, 0.13);
-	}
-
-	.letter-heading {
 		display: flex;
 		align-items: center;
-		gap: 1.1rem;
+		justify-content: center;
 
-		margin-bottom: 1.2rem;
+		min-width: 0;
+		min-height: 570px;
 	}
 
-	.envelope-icon {
-		flex-shrink: 0;
+	.contact-note {
+		position: relative;
+		z-index: 4;
 
-		display: grid;
-		place-items: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-		width: 58px;
-		height: 58px;
+		width: 100%;
+		min-width: 0;
+		padding: clamp(0.25rem, 1vw, 0.75rem);
 
-		background: rgba(216, 169, 182, 0.3);
-		border: 2px solid rgba(125, 91, 99, 0.32);
-		border-radius: 18px;
+		border-radius: 28px;
 
-		font-size: 1.7rem;
-		color: #68565c;
+		text-decoration: none;
+
+		transition:
+			transform 0.2s ease,
+			filter 0.2s ease;
 	}
 
-	.card-label,
-	.contact-label {
-		margin: 0 0 0.3rem;
+	.contact-note img {
+		display: block;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		width: 100%;
+		height: auto;
+		max-height: 680px;
 
-		font-size: 0.76rem;
-		font-weight: 750;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
+		object-fit: contain;
 
-		color: #9a6878;
+		filter: drop-shadow(0 14px 22px rgba(29, 39, 42, 0.2));
 	}
 
-	h2 {
-		margin: 0;
+	.contact-note:hover {
+		transform: translateY(-4px) rotate(-0.3deg);
+		filter: brightness(1.025);
+	}
+
+	.contact-note:focus-visible {
+		outline: 4px solid white;
+		outline-offset: 6px;
+	}
+
+	.blob {
+		position: absolute;
+
+		pointer-events: none;
+		user-select: none;
+	}
+
+	.blob-main {
+		z-index: 1;
+
+		left: 1%;
+		top: 3%;
+
+		width: 82%;
+		height: 83%;
+
+		background: rgba(255, 241, 194, 0.76);
+
+		border-radius:
+			42% 58% 57% 43% /
+			38% 39% 61% 62%;
+
+		transform: rotate(7deg);
+
+		box-shadow:
+			inset 0 0 0 1px rgba(105, 94, 67, 0.08),
+			0 16px 34px rgba(42, 54, 44, 0.08);
+	}
+
+	.blob-shadow {
+		z-index: 0;
+
+		right: 0;
+		bottom: 2%;
+
+		width: 62%;
+		height: 48%;
+
+		background: rgba(195, 194, 137, 0.48);
+
+		border-radius:
+			57% 43% 39% 61% /
+			47% 58% 42% 53%;
+
+		transform: rotate(-10deg);
+	}
+
+	.methods-area {
+		position: relative;
+		isolation: isolate;
+	}
+
+	.blob-right {
+		z-index: 0;
+
+		top: -12%;
+		right: -28%;
+
+		width: 115%;
+		height: 48%;
+
+		background: rgba(218, 163, 151, 0.56);
+
+		border-radius:
+			57% 43% 62% 38% /
+			45% 58% 42% 55%;
+
+		transform: rotate(28deg);
+	}
+
+	.doodle {
+		position: absolute;
+		z-index: 5;
+
+		pointer-events: none;
 
 		font-family:
 			'Gill Sans',
@@ -321,105 +374,37 @@
 			'Trebuchet MS',
 			sans-serif;
 
-		color: #3f4253;
+		color: rgba(119, 78, 86, 0.78);
 	}
 
-	.letter-heading h2 {
-		font-size: clamp(1.7rem, 3vw, 2.35rem);
-		line-height: 1.1;
-	}
+	/* .doodle-one {
+		left: 44%;
+		bottom: 5%;
 
-	.letter-copy {
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-size: 2.2rem;
+		transform: rotate(-14deg);
+	} */
 
-		font-size: 1.03rem;
-		line-height: 1.65;
+	/* .doodle-two {
+		right: 7%;
+		top: 19%;
 
-		color: #51505a;
-	}
+		font-size: 2.1rem;
+		transform: rotate(13deg);
+	} */
 
-	.letter-copy p {
-		margin: 0;
-	}
+	.doodle-three {
+		left: 7%;
+		bottom: 2%;
 
-	.letter-copy p + p {
-		margin-top: 1rem;
-	}
-
-	.interests {
-		width: 100%;
-		margin: 1.6rem 0;
-		padding-top: 1.4rem;
-
-		border-top: 1px solid rgba(91, 72, 61, 0.25);
-	}
-
-	.interests ul {
-		margin: 0.8rem 0 0;
-		padding-left: 1.25rem;
-
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
-
-		font-size: 0.98rem;
-		line-height: 1.55;
-
-		color: #51505a;
-	}
-
-	.interests li + li {
-		margin-top: 0.45rem;
-	}
-
-	.interests li::marker {
-		color: #9a6878;
-	}
-
-	.primary-button {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.45rem;
-
-		margin-top: auto;
-		padding: 0.72rem 1rem;
-
-		background: #596b50;
-		border: 2px solid #465540;
-		border-radius: 999px;
-
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
-
-		font-size: 0.92rem;
-		font-weight: 750;
-
-		color: white;
-		text-decoration: none;
-
-		transition:
-			transform 0.18s ease,
-			background 0.18s ease;
-	}
-
-	.primary-button:hover {
-		background: #6b7d61;
-		transform: translateY(-2px);
+		font-size: 2.2rem;
+		color: rgba(225, 188, 102, 0.9);
 	}
 
 	.contact-methods {
+		position: relative;
+		z-index: 2;
+
 		display: grid;
 		gap: 1rem;
 	}
@@ -430,7 +415,7 @@
 
 		padding: 1.25rem 1.35rem;
 
-		background: #f7eee3;
+		background: rgba(247, 238, 227, 0.97);
 		border: 2px solid rgba(91, 72, 61, 0.72);
 		border-radius: 20px;
 
@@ -458,9 +443,40 @@
 		gap: 1rem;
 	}
 
+	.contact-label {
+		margin: 0 0 0.3rem;
+
+		font-family:
+			'Segoe UI',
+			Tahoma,
+			Geneva,
+			Verdana,
+			sans-serif;
+
+		font-size: 0.76rem;
+		font-weight: 750;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+
+		color: #9a6878;
+	}
+
 	.contact-card-top > span {
 		color: #9a6878;
 		font-size: 1.15rem;
+	}
+
+	h2 {
+		margin: 0;
+
+		font-family:
+			'Gill Sans',
+			'Gill Sans MT',
+			Calibri,
+			'Trebuchet MS',
+			sans-serif;
+
+		color: #3f4253;
 	}
 
 	.contact-card h2 {
@@ -485,40 +501,12 @@
 		color: #65636a;
 	}
 
-	.contact-card:focus-visible,
-	.primary-button:focus-visible {
+	.contact-card:focus-visible {
 		outline: 4px solid white;
 		outline-offset: 4px;
 	}
 
-	.contact-footer {
-		margin-top: clamp(1.4rem, 3vw, 2.25rem);
-		padding: 1.15rem 1.3rem;
-
-		background: rgba(247, 238, 227, 0.82);
-		border: 2px solid rgba(91, 72, 61, 0.45);
-		border-radius: 18px;
-
-		text-align: center;
-	}
-
-	.contact-footer p {
-		margin: 0;
-
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
-
-		font-size: 0.92rem;
-		line-height: 1.5;
-
-		color: #51505a;
-	}
-
-	@media (max-width: 850px) {
+	@media (max-width: 900px) {
 		.contact-page {
 			padding-top: 7rem;
 			background-attachment: scroll;
@@ -531,6 +519,62 @@
 
 		.contact-layout {
 			grid-template-columns: 1fr;
+		}
+
+		.note-area {
+			min-height: auto;
+			padding: 2rem 0;
+		}
+
+		.contact-note {
+			padding: 0;
+		}
+
+		.contact-note img {
+			width: min(100%, 780px);
+			max-height: none;
+		}
+
+		.blob-main {
+			left: 4%;
+			top: 6%;
+
+			width: 90%;
+			height: 84%;
+		}
+
+		.blob-shadow {
+			right: 3%;
+			bottom: 1%;
+
+			width: 65%;
+			height: 44%;
+		}
+
+		.blob-right {
+			top: -7%;
+			right: -12%;
+
+			width: 80%;
+			height: 35%;
+		}
+
+		.contact-methods {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 600px) {
+		.contact-methods {
+			grid-template-columns: 1fr;
+		}
+
+		.blob-right {
+			top: -3%;
+			right: -25%;
+
+			width: 105%;
+			height: 27%;
 		}
 	}
 
@@ -545,19 +589,36 @@
 			margin-bottom: 1.4rem;
 		}
 
-		.letter-card {
-			padding: 1.25rem;
+		.note-area {
+			padding: 1rem 0 1.5rem;
 		}
 
-		.letter-heading {
-			align-items: flex-start;
+		.blob-main {
+			left: 1%;
+			top: 2%;
+
+			width: 98%;
+			height: 88%;
 		}
 
-		.envelope-icon {
-			width: 48px;
-			height: 48px;
-			border-radius: 15px;
+		.blob-shadow {
+			right: 0;
+			bottom: 0;
+
+			width: 70%;
+			height: 38%;
+		}
+
+		.doodle-one {
+			font-size: 1.5rem;
+		}
+
+		.doodle-two {
 			font-size: 1.4rem;
+		}
+
+		.doodle-three {
+			font-size: 1.5rem;
 		}
 
 		.contact-card {
@@ -566,7 +627,7 @@
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.primary-button,
+		.contact-note,
 		.contact-card {
 			transition: none;
 		}

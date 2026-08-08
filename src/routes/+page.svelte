@@ -128,9 +128,47 @@
 			aria-label="Open photo page"
 		></a>
 	</div>
+	<div class="cal-webring">
+		<a
+			class="webring-arrow"
+			href="https://cal-webring.vercel.app/prev?current=https%3A%2F%2Fangelawu.dev"
+			aria-label="Previous site in Cal Webring"
+		>
+			←
+		</a>
+
+		<a
+			href="https://cal-webring.vercel.app/"
+			>
+		<img
+			src="https://cal-webring.vercel.app/badge.png"
+			alt=""
+			aria-hidden="true"
+		/></a>
+		
+	
+		<!-- <span>Cal Webring</span> -->
+	
+		<!-- <a
+			class="webring-random"
+			href="https://cal-webring.vercel.app/random?current=https%3A%2F%2Fangelawu.dev"
+			aria-label="Visit a random site in Cal Webring"
+		>
+			🎲
+		</a> -->
+	
+		<a
+			class="webring-arrow"
+			href="https://cal-webring.vercel.app/next?current=https%3A%2F%2Fangelawu.dev"
+			aria-label="Next site in Cal Webring"
+		>
+			→
+		</a>
+	</div>
 </section>
 
 <style>
+	
 	.hero {
 		min-height: 100vh;
 
@@ -139,17 +177,25 @@
 		background-position: center;
 
 		display: flex;
-		justify-content: center;
+		flex-direction: column;   /* <-- add this */
 		align-items: center;
+		gap: 1.2rem;
 
 		padding-top: 80px;
 		box-sizing: border-box;
 		overflow: hidden;
-	}
+	}	
 
 	.scene {
 		position: relative;
 		width: clamp(700px, 70vw, 1200px);
+		/* margin-bottom: 1.5rem; */
+	}
+
+	@media (max-width: 800px) {
+		.scene {
+			width: 92vw;
+		}
 	}
 
 	.blanket {
@@ -428,4 +474,70 @@
 			transform: none;
 		}
 	}
+	.cal-webring {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.8rem;
+		z-index: 20;
+
+		width: max-content;
+		max-width: calc(100vw - 2rem);
+
+		margin: -2rem auto 2rem;
+		transform: translateY(-7rem);
+
+		padding: 0.65rem 1rem;
+
+		/* background: rgba(255, 248, 234, 0.82); */
+
+		backdrop-filter: blur(2px);
+		-webkit-backdrop-filter: blur(2px);
+
+		/* border: 2px solid rgba(91, 72, 61, 0.45); */
+		border-radius: 999px;
+
+		box-shadow: 0 5px 14px rgba(39, 50, 38, 0.14);
+
+		font-family: monospace;
+		font-size: 0.8rem;
+		color: #4f5347;
+		
+
+		white-space: nowrap;
+}
+
+	@media (max-width: 1100px) {
+		.cal-webring {
+			margin: -0.5rem auto 0;
+			transform: translateY(-1rem);
+		}
+	}
+
+	.cal-webring img {
+		width: 36px;
+		height: 36px;
+		display: block;
+		object-fit: contain;
+	}
+
+	.cal-webring a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		color: inherit;
+		text-decoration: none;
+
+		transition:
+			transform 0.15s ease,
+			opacity 0.15s ease;
+	}
+
+	.cal-webring a:hover {
+		transform: translateY(-1px);
+		opacity: 0.7;
+	}
+
+	
 </style>
