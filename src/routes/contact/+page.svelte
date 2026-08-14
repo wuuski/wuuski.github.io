@@ -80,8 +80,8 @@
 					/>
 				</a>
 
-				<div class="doodle doodle-one" aria-hidden="true">♡</div>
-				<div class="doodle doodle-two" aria-hidden="true">✦</div>
+				<!-- <div class="doodle doodle-one" aria-hidden="true">♡</div>
+				<div class="doodle doodle-two" aria-hidden="true">✦</div> -->
 				<div class="doodle doodle-three" aria-hidden="true">⋆</div>
 			</div>
 
@@ -177,13 +177,13 @@
 
 	.eyebrow {
 		margin: 0 0 0.35rem;
-
-		font-family:
+		font-family: SmileySans;
+		/* font-family:
 			'Segoe UI',
 			Tahoma,
 			Geneva,
 			Verdana,
-			sans-serif;
+			sans-serif; */
 
 		font-size: 0.82rem;
 		font-weight: 750;
@@ -195,13 +195,13 @@
 
 	h1 {
 		margin: 0;
-
-		font-family:
+		font-family: SmileySans;
+		/* font-family:
 			'Gill Sans',
 			'Gill Sans MT',
 			Calibri,
 			'Trebuchet MS',
-			sans-serif;
+			sans-serif; */
 
 		font-size: clamp(2.8rem, 5vw, 4.25rem);
 		line-height: 1;
@@ -212,13 +212,14 @@
 	.intro {
 		max-width: 620px;
 		margin: 0.75rem auto 0;
+		font-family: SmileySans;
 
-		font-family:
+		/* font-family:
 			'Segoe UI',
 			Tahoma,
 			Geneva,
 			Verdana,
-			sans-serif;
+			sans-serif; */
 
 		font-size: clamp(1rem, 1.5vw, 1.16rem);
 		line-height: 1.55;
@@ -445,13 +446,7 @@
 
 	.contact-label {
 		margin: 0 0 0.3rem;
-
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 0.76rem;
 		font-weight: 750;
@@ -468,13 +463,14 @@
 
 	h2 {
 		margin: 0;
+		font-family: SmileySans;
 
-		font-family:
+		/* font-family:
 			'Gill Sans',
 			'Gill Sans MT',
 			Calibri,
 			'Trebuchet MS',
-			sans-serif;
+			sans-serif; */
 
 		color: #3f4253;
 	}
@@ -487,14 +483,8 @@
 
 	.contact-card > p {
 		margin: 0.55rem 0 0;
-
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
-
+		font-family: SmileySans;
+		
 		font-size: 0.9rem;
 		line-height: 1.45;
 

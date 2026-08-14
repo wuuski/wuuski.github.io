@@ -260,12 +260,7 @@
 	.eyebrow {
         margin: 0 0 0.35rem;
 
-        font-family:
-            'Segoe UI',
-            Tahoma,
-            Geneva,
-            Verdana,
-            sans-serif;
+        font-family: SmileySans;
 
         font-size: 0.78rem;
         font-weight: 750;
@@ -278,12 +273,7 @@
 	.paper-label {
 		margin: 0 0 0.35rem;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 0.78rem;
 		font-weight: 750;
@@ -340,12 +330,7 @@
 .eyebrow {
 	margin: 0 0 0.35rem;
 
-	font-family:
-		'Segoe UI',
-		Tahoma,
-		Geneva,
-		Verdana,
-		sans-serif;
+	font-family: SmileySans;
 
 	font-size: 0.78rem;
 	font-weight: 750;
@@ -358,12 +343,7 @@
     h1 {
         margin: 0;
 
-        font-family:
-            'Gill Sans',
-            'Gill Sans MT',
-            Calibri,
-            'Trebuchet MS',
-            sans-serif;
+        font-family: SmileySans;
 
         font-size: clamp(3rem, 6vw, 5rem);
         line-height: 1;
@@ -377,12 +357,7 @@
         max-width: 610px;
         margin: 0.8rem auto 0;
 
-        font-family:
-            'Segoe UI',
-            Tahoma,
-            Geneva,
-            Verdana,
-            sans-serif;
+        font-family: SmileySans;
 
         font-size: clamp(1rem, 1.5vw, 1.15rem);
         line-height: 1.55;
@@ -471,12 +446,7 @@
 		border: 1px solid rgba(104, 83, 57, 0.35);
 		box-shadow: 3px 5px 0 rgba(85, 76, 59, 0.15);
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		color: #645340;
 	}
@@ -534,12 +504,7 @@
 
 		margin: 0;
 
-		font-family:
-			'Gill Sans',
-			'Gill Sans MT',
-			Calibri,
-			'Trebuchet MS',
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: clamp(1.45rem, 2.4vw, 2rem);
 		line-height: 1.12;
@@ -550,14 +515,9 @@
 		position: relative;
 		z-index: 2;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
-		font-size: 0.98rem;
+		font-size: 1rem;
 		line-height: 1.55;
 	}
 
@@ -783,12 +743,7 @@
 	.now-footer p {
 		margin: 0;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 0.85rem;
 		color: #53604f;

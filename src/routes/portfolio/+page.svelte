@@ -290,12 +290,7 @@
 	.eyebrow {
 		margin: 0 0 0.35rem;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 0.82rem;
 		font-weight: 750;
@@ -308,12 +303,7 @@
 	h1 {
 		margin: 0;
 
-		font-family:
-			'Gill Sans',
-			'Gill Sans MT',
-			Calibri,
-			'Trebuchet MS',
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: clamp(2.8rem, 5vw, 4.25rem);
 		line-height: 1;
@@ -325,12 +315,7 @@
 		max-width: 680px;
 		margin: 0.75rem auto 0;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: clamp(1rem, 1.5vw, 1.16rem);
 		line-height: 1.55;
@@ -428,12 +413,7 @@
 			rgba(26, 28, 27, 0)
 		);
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 0.95rem;
 		font-weight: 700;
@@ -533,12 +513,7 @@
 	.lightbox-label {
 		margin: 0 0 0.18rem;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 0.68rem;
 		font-weight: 750;
@@ -551,12 +526,7 @@
 	.lightbox-footer h2 {
 		margin: 0;
 
-		font-family:
-			'Gill Sans',
-			'Gill Sans MT',
-			Calibri,
-			'Trebuchet MS',
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: clamp(1.15rem, 2vw, 1.65rem);
 		font-weight: 500;
@@ -568,12 +538,7 @@
 		flex-shrink: 0;
 		margin: 0;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 0.85rem;
 		letter-spacing: 0.08em;
@@ -641,7 +606,7 @@
 		width: 52px;
 		height: 52px;
 
-		font-family: Georgia, serif;
+		font-family: SmileySans;
 		font-size: 2.25rem;
 		line-height: 1;
 	}

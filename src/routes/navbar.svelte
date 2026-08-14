@@ -44,11 +44,11 @@
     
         padding: 0.75rem 1.5rem;
     
-        background: rgba(76, 85, 110, 0.28);
+        background: rgba(76, 85, 110, 0.20);
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
     
-        border: 2px solid rgba(59, 51, 38, 0.45);
+        border: 1px solid rgba(59, 51, 38, 0.45);
         border-radius: 20px;
     
         z-index: 100;
@@ -58,9 +58,11 @@
         display: flex;
         align-items: center;
         gap: 0.9rem;
+        margin-top:0.5rem;
     
-        font-size: clamp(1.4rem, 2vw, 2.2rem);
-        font-weight: bold;
+        font-size: clamp(2rem, 2.5vw, 2.2rem);
+        font-family: SmileySans;
+        /* font-weight: bold; */
     
         color: white;
         text-decoration: none;
@@ -83,6 +85,7 @@
         display: flex;
         align-items: center;
         gap: 1.5rem;
+        font-family: SmileySans;
     
         margin: 0;
         padding: 0;
@@ -91,7 +94,7 @@
     .nav-links a {
         color: white;
         text-decoration: none;
-        font-size: clamp(1rem, 1.1vw, 1.25rem);
+        font-size: clamp(1.5rem, 1.1vw, 1.25rem);
     
         transition: color 0.2s ease;
     }

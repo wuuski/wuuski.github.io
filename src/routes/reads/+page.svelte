@@ -7,7 +7,7 @@
 			author: 'Henry David Thoreau',
 			genre: 'Nature · Philosophy',
 			note:
-				'A reflection on simplicity, nature, solitude, and what it means to live deliberately.',
+				'The tech bro desire to retreat into a cabin in the woods next to a Pond',
 			progress: 'Currently reading',
 			coverClass: 'walden'
 		},
@@ -16,7 +16,7 @@
 			author: 'William Gibson',
 			genre: 'Science fiction · Cyberpunk',
 			note:
-				'A strange, atmospheric cyberpunk classic about hackers, artificial intelligence, and the digital future.',
+				'"The sky above the port was the color of television, tuned to a dead channel"',
 			progress: 'Currently reading',
 			coverClass: 'neuromancer'
 		}
@@ -28,7 +28,7 @@
 			author: 'Neal Stephenson',
 			genre: 'Science fiction · Cyberpunk',
 			note:
-				'Wild, funny, and incredibly imaginative. The metaverse before the term became unavoidable.',
+				'Icl this took me almost a whole year to read but it was really good I think my attention span just got snow Crashed',
 			coverClass: 'snow-crash'
 		},
 		{
@@ -36,7 +36,7 @@
 			author: 'Sonny Liew',
 			genre: 'Graphic novel · Historical fiction',
 			note:
-				'A graphic biography that blends humor, politics, history, and visual experimentation beautifully.',
+				'I learned a lot about Singapore... I got that Iron In Me',
 			coverClass: 'charlie'
 		},
 		{
@@ -44,7 +44,7 @@
 			author: 'Haruki Murakami',
 			genre: 'Literary fiction',
 			note:
-				'A quiet, melancholic story about memory, loneliness, love, and growing into adulthood.',
+				'I struggled to put this book down when I read it, the plot was very Grippy',
 			coverClass: 'norwegian'
 		}
 	];
@@ -243,12 +243,7 @@
 	.eyebrow {
 		margin: 0 0 0.35rem;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 0.82rem;
 		font-weight: 750;
@@ -261,12 +256,7 @@
 	h1 {
 		margin: 0;
 
-		font-family:
-			'Gill Sans',
-			'Gill Sans MT',
-			Calibri,
-			'Trebuchet MS',
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: clamp(2.8rem, 5vw, 4.25rem);
 		line-height: 1;
@@ -278,12 +268,7 @@
 		max-width: 680px;
 		margin: 0.75rem auto 0;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: clamp(1rem, 1.5vw, 1.16rem);
 		line-height: 1.55;
@@ -380,12 +365,7 @@
 	.shelf-label h2 {
 		margin: 0;
 
-		font-family:
-			'Gill Sans',
-			'Gill Sans MT',
-			Calibri,
-			'Trebuchet MS',
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: clamp(1.25rem, 2.2vw, 1.75rem);
 		font-weight: 600;
@@ -518,7 +498,7 @@
 		max-width: 100%;
 		margin: 0;
 
-		font-family: Georgia, 'Times New Roman', serif;
+		font-family: SmileySans;
 
 		font-size: clamp(0.9rem, 1.35vw, 1.4rem);
 		font-weight: 700;
@@ -536,12 +516,7 @@
 		max-width: 100%;
 		margin: 1.1rem 0 0;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: clamp(0.58rem, 0.8vw, 0.75rem);
 		font-weight: 650;
@@ -657,12 +632,7 @@
 
 	.book-status,
 	.genre {
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
@@ -681,12 +651,7 @@
 		max-width: 100%;
 		margin: 0;
 
-		font-family:
-			'Gill Sans',
-			'Gill Sans MT',
-			Calibri,
-			'Trebuchet MS',
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: clamp(1rem, 1.35vw, 1.4rem);
 		line-height: 1.08;
@@ -701,12 +666,7 @@
 	.author {
 		margin: 0.3rem 0 0;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 0.8rem;
 		font-weight: 650;
@@ -729,12 +689,7 @@
 	.description {
 		margin: 0.55rem 0 0;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: clamp(0.78rem, 0.9vw, 0.88rem);
 		line-height: 1.5;
@@ -900,12 +855,7 @@
 
 		box-shadow: 4px 5px 0 rgba(28, 24, 19, 0.18);
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 0.8rem;
 		font-weight: 650;

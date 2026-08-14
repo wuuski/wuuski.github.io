@@ -25,7 +25,13 @@
         image-rendering: pixelated;
         background-attachment: fixed;
     }
-	
+    @font-face {
+      font-family: 'SmileySans';
+      src: url('static/fonts/Smiley Sans.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
 	
 	
 	:global(.flex-item) {

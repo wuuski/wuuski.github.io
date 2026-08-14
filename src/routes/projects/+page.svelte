@@ -191,12 +191,7 @@
 	.eyebrow {
 		margin: 0 0 0.35rem;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 0.82rem;
 		font-weight: 750;
@@ -209,12 +204,7 @@
 	h1 {
 		margin: 0;
 
-		font-family:
-			'Gill Sans',
-			'Gill Sans MT',
-			Calibri,
-			'Trebuchet MS',
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: clamp(2.8rem, 5vw, 4.25rem);
 		line-height: 1;
@@ -224,12 +214,7 @@
 		max-width: 650px;
 		margin: 0.75rem auto 0;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: clamp(1rem, 1.5vw, 1.16rem);
 		line-height: 1.55;
@@ -308,12 +293,7 @@
 	.project-category {
 		margin: 0 0 0.45rem;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 0.78rem;
 		font-weight: 750;
@@ -326,12 +306,7 @@
 	h2 {
 		margin: 0;
 
-		font-family:
-			'Gill Sans',
-			'Gill Sans MT',
-			Calibri,
-			'Trebuchet MS',
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: clamp(1.75rem, 2.8vw, 2.4rem);
 		line-height: 1.1;
@@ -342,12 +317,7 @@
 	.summary {
 		margin: 0.9rem 0;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 1.03rem;
 		line-height: 1.6;
@@ -359,12 +329,7 @@
 		margin: 0 0 1.15rem;
 		padding-left: 1.2rem;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 1rem;
 		line-height: 1.5;
@@ -392,12 +357,7 @@
 		border: 1px solid rgba(125, 91, 99, 0.3);
 		border-radius: 999px;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 0.77rem;
 		font-weight: 650;
@@ -416,12 +376,7 @@
 		border: 2px solid #465540;
 		border-radius: 999px;
 
-		font-family:
-			'Segoe UI',
-			Tahoma,
-			Geneva,
-			Verdana,
-			sans-serif;
+		font-family: SmileySans;
 
 		font-size: 0.9rem;
 		font-weight: 750;
