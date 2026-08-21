@@ -44,11 +44,11 @@
 			image: '/girlpainting.png',
 			alt: 'Painted portrait of a girl'
 		},
-		// {
-		// 	title: 'Misha',
-		// 	image: '/mishpainting.png',
-		// 	alt: 'Painted portrait titled Misha'
-		// }
+		{
+			title: 'rolling ball',
+			image: '/rollingball.png',
+			alt: 'Berkeley campus study from a photo I took'
+		}
 	];
 
 	let selectedIndex = null;
