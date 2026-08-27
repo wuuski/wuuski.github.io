@@ -30,7 +30,7 @@
 			alt: 'Painted portrait titled Betty'
 		},
 		{
-			title: 'Angela',
+			title: 'Angela (2021)',
 			image: '/Angela.png',
 			alt: 'Graphite portrait titled Angela'
 		},
@@ -48,6 +48,11 @@
 			title: 'rolling ball',
 			image: '/rollingball.png',
 			alt: 'Berkeley campus study from a photo I took'
+		}, 
+		{
+			title: 'Angela (2026)',
+			image: '/realisticselfportrait.png',
+			alt: 'recent self portrait'
 		}
 	];
 
