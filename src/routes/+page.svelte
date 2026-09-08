@@ -198,6 +198,14 @@
 		}
 	}
 
+	@font-face {
+		font-family: 'SmileySans';
+		src: url('/fonts/SmileySans.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
 	.blanket {
 		position: relative;
 		z-index: 1;
