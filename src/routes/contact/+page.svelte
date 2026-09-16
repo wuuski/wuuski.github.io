@@ -78,7 +78,14 @@
 						src="/paper-planes.png"
 						alt="Hand-drawn note from Angela introducing herself and inviting visitors to email her"
 					/>
+					
 				</a>
+				<img
+						class="letter-doodle"
+						src="/letters.png"
+						alt=""
+						aria-hidden="true"
+					/>
 
 				<!-- <div class="doodle doodle-one" aria-hidden="true">♡</div>
 				<div class="doodle doodle-two" aria-hidden="true">✦</div> -->
@@ -291,6 +298,59 @@
 		outline: 4px solid white;
 		outline-offset: 6px;
 	}
+
+	.letter-doodle {
+		position: absolute;
+		z-index: 7;
+
+		width: clamp(145px, 18vw, 230px);
+		height: auto;
+
+		right: -3rem;
+		bottom: -0.75rem;
+
+		transform: rotate(25deg);
+		transform-origin: center;
+
+		filter: drop-shadow(0 10px 16px rgba(29, 39, 42, 0.15));
+
+		pointer-events: none;
+		user-select: none;
+
+		transition: transform 0.25s ease;
+	}
+	@media (max-width: 1100px) {
+	.letter-doodle {
+		width: clamp(130px, 17vw, 190px);
+		right: -0.5rem;
+		bottom: 0;
+	}
+}
+
+@media (max-width: 900px) {
+	.letter-doodle {
+		position: relative;
+
+		width: min(190px, 42vw);
+
+		right: auto;
+		bottom: auto;
+
+		margin: -3.5rem 1rem 0 auto;
+
+		display: block;
+
+		transform: rotate(6deg);
+	}
+}
+
+@media (max-width: 500px) {
+	.letter-doodle {
+		width: min(150px, 40vw);
+		margin-top: -2rem;
+		margin-right: 0.5rem;
+	}
+}
 
 	.blob {
 		position: absolute;
