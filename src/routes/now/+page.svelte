@@ -64,7 +64,7 @@
 
 				<img
 					class="now-illustration"
-					src="/now_scene.png"
+					src="/now_scene.webp"
 					alt="Illustration of Angela working at a desk with a drawing tablet, laptop, and plush dinosaur"
 				/>
 
@@ -184,7 +184,7 @@
 				rgba(164, 202, 116, 0.05),
 				rgba(164, 202, 116, 0.05)
 			),
-			url('/grass_bg.png');
+			url('/grass_bg.webp');
 
 		background-size: cover;
 		background-position: center;

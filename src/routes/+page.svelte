@@ -2,63 +2,63 @@
 	<div class="scene">
 		<img
 			class="blanket"
-			src="/blanket_scene.png"
+			src="/blanket_scene.webp"
 			alt="Interactive picnic blanket portfolio"
 		/>
 
 		<!-- Decorative hover outlines -->
 		<img
 			class="item-outline now-outline"
-			src="/now-outline.png"
+			src="/now-outline.webp"
 			alt=""
 			aria-hidden="true"
 		/>
 
 		<img
 			class="item-outline blog-outline"
-			src="/blog-outline.png"
+			src="/blog-outline.webp"
 			alt=""
 			aria-hidden="true"
 		/>
 
 		<img
 			class="item-outline work-outline"
-			src="/work-outline.png"
+			src="/work-outline.webp"
 			alt=""
 			aria-hidden="true"
 		/>
 
 		<img
 			class="item-outline art-outline"
-			src="/art-outline.png"
+			src="/art-outline.webp"
 			alt=""
 			aria-hidden="true"
 		/>
 
 		<img
 			class="item-outline contact-outline"
-			src="/contact-outline.png"
+			src="/contact-outline.webp"
 			alt=""
 			aria-hidden="true"
 		/>
 
 		<img
 			class="item-outline resume-outline"
-			src="/resume-outline.png"
+			src="/resume-outline.webp"
 			alt=""
 			aria-hidden="true"
 		/>
 
 		<img
 			class="item-outline reads-outline"
-			src="/reads-outline.png"
+			src="/reads-outline.webp"
 			alt=""
 			aria-hidden="true"
 		/>
 
 		<img
 			class="item-outline photos-outline"
-			src="/photos-outline.png"
+			src="/photos-outline.webp"
 			alt=""
 			aria-hidden="true"
 		/>
@@ -172,7 +172,7 @@
 	.hero {
 		min-height: 100vh;
 
-		background-image: url('/grass_bg.png');
+		background-image: url('/grass_bg.webp');
 		background-size: cover;
 		background-position: center;
 

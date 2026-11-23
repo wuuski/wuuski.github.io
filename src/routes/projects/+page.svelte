@@ -5,7 +5,7 @@
 		{
 			title: 'Image Popularity Prediction',
 			category: 'Machine learning · Computer vision',
-			image: '/yolo2.png',
+			image: '/yolo2.webp',
 			alt: 'Image Popularity Prediction Streamlit interface',
 			href: 'https://image-popularity-yolo.streamlit.app/',
 			summary:
@@ -21,7 +21,7 @@
 		{
 			title: 'S.S. Catnip',
 			category: 'Creative coding · Game development',
-			image: '/itchtitle.png',
+			image: '/itchtitle.webp',
 			alt: 'Terry’s Fishing Adventure game banner',
 			href: 'https://itch.io/jam/gmtk-2025/rate/3778108',
 			summary:
@@ -37,7 +37,7 @@
 		{
 			title: 'Dawn Runner Rocket Engine',
 			category: 'Engineering · Technical documentation',
-			image: '/StaticFirePicture.jpg',
+			image: '/StaticFirePicture.webp',
 			alt: 'Dawn Runner hybrid rocket engine during a static fire test',
 			href:
 				'https://drive.google.com/file/d/1QkYQZWJ6dqt-i1KgiO_hFSaXbRsxEP2X/view?usp=drive_link',
@@ -155,7 +155,7 @@
 				rgba(164, 202, 116, 0.06),
 				rgba(164, 202, 116, 0.06)
 			),
-			url('/grass_bg.png');
+			url('/grass_bg.webp');
 
 		background-size: cover;
 		background-position: center;

@@ -75,14 +75,14 @@
 					aria-label={`Email Angela at ${contactEmail}`}
 				>
 					<img
-						src="/paper-planes.png"
+						src="/paper-planes.webp"
 						alt="Hand-drawn note from Angela introducing herself and inviting visitors to email her"
 					/>
 					
 				</a>
 				<img
 						class="letter-doodle"
-						src="/letters.png"
+						src="/letters.webp"
 						alt=""
 						aria-hidden="true"
 					/>
@@ -141,7 +141,7 @@
 				rgba(164, 202, 116, 0.06),
 				rgba(164, 202, 116, 0.06)
 			),
-			url('/grass_bg.png');
+			url('/grass_bg.webp');
 
 		background-size: cover;
 		background-position: center;

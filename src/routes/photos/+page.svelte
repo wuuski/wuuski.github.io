@@ -6,13 +6,13 @@
 	const photos = [
 		{
 			title: 'Artist’s Corner',
-			image: '/artstation.jpg',
+			image: '/artstation.webp',
 			alt: 'A warmly lit artist workspace beside an open blue window',
 			orientation: 'portrait'
 		},
 		{
 			title: 'Takeoff',
-			image: '/birdfountain.jpg',
+			image: '/birdfountain.webp',
 			alt: 'A small bird lifting away from a fountain with water splashing beneath it',
 			orientation: 'landscape'
 		},
@@ -24,37 +24,37 @@
 		},
 		{
 			title: 'Gulls',
-			image: '/gulls.jpg',
+			image: '/gulls.webp',
 			alt: 'Two gulls standing near the water, one holding a crab',
 			orientation: 'landscape'
 		},
 		{
 			title: 'Old Town',
-			image: '/oldtown.jpg',
+			image: '/oldtown.webp',
 			alt: 'A sunlit old-town street lined with shops and hanging signs',
 			orientation: 'landscape'
 		},
 		{
 			title: 'Do You Remember?',
-			image: '/porter.jpg',
+			image: '/porter.webp',
 			alt: 'A concert stage illuminated in blue light with text projected behind the performers',
 			orientation: 'landscape'
 		},
 		{
 			title: 'Terracotta',
-			image: '/terracotta.jpg',
+			image: '/terracotta.webp',
 			alt: 'Rows of Terracotta Army figures viewed from above',
 			orientation: 'landscape'
 		},
 		{
 			title: 'Drifting',
-			image: '/drifting.jpg',
+			image: '/drifting.webp',
 			alt: 'A person drifting in the ocean on an inflatable device at night',
 			orientation: 'landscape'
 		},
 		{
 			title: 'Village View',
-			image: '/village.jpg',
+			image: '/village.webp',
 			alt: 'A balcony overlooking a mountain village under a blue sky',
 			orientation: 'landscape'
 		},
@@ -66,7 +66,7 @@
 		},
 		{
 			title: 'After Hours',
-			image: '/shop.jpg',
+			image: '/shop.webp',
 			alt: 'A dimly lit shop interior with colorful papel picado decorations',
 			orientation: 'landscape'
 		}
@@ -273,7 +273,7 @@
 				rgba(164, 202, 116, 0.06),
 				rgba(164, 202, 116, 0.06)
 			),
-			url('/grass_bg.png');
+			url('/grass_bg.webp');
 
 		background-size: cover;
 		background-position: center;

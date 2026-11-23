@@ -209,7 +209,7 @@
 				rgba(164, 202, 116, 0.06),
 				rgba(164, 202, 116, 0.06)
 			),
-			url('/grass_bg.png');
+			url('/grass_bg.webp');
 
 		background-size: cover;
 		background-position: center;

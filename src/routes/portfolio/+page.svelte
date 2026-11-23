@@ -6,52 +6,52 @@
 	const artworks = [
 		{
 			title: 'Grandpas Garden',
-			image: '/grandpapatio.png',
+			image: '/grandpapatio.webp',
 			alt: 'A colorful painting of a sunlit garden and wooden patio'
 		},
 		{
 			title: 'Edgar',
-			image: '/Edgar.png',
+			image: '/Edgar.webp',
 			alt: 'Watercolor painting of an orange cat lying beside a person'
 		},
 		{
 			title: 'The Cozy Hole-in-the-Tree',
-			image: '/The Cozy Hole-in-the-Tree.png',
+			image: '/The Cozy Hole-in-the-Tree.webp',
 			alt: 'Digital painting of a magical home built into a forest tree'
 		},
 		{
 			title: 'Scientists’ Refuge',
-			image: "/Scientists' Refuge.png",
+			image: "/Scientists' Refuge.webp",
 			alt: 'Digital painting titled Scientists’ Refuge'
 		},
 		{
 			title: 'Betty',
-			image: '/Betty.png',
+			image: '/Betty.webp',
 			alt: 'Painted portrait titled Betty'
 		},
 		{
 			title: 'Angela (2021)',
-			image: '/Angela.png',
+			image: '/Angela.webp',
 			alt: 'Graphite portrait titled Angela'
 		},
 		{
 			title: 'The Shell',
-			image: '/The Shell.png',
+			image: '/The Shell.webp',
 			alt: 'Digital painting of a restaurant inside a giant shell'
 		},
 		{
 			title: 'Memory Project',
-			image: '/girlpainting.png',
+			image: '/girlpainting.webp',
 			alt: 'Painted portrait of a girl'
 		},
 		{
 			title: 'rolling ball',
-			image: '/rollingball.png',
+			image: '/rollingball.webp',
 			alt: 'Berkeley campus study from a photo I took'
 		}, 
 		{
 			title: 'Angela (2026)',
-			image: '/realisticselfportrait.png',
+			image: '/realisticselfportrait.webp',
 			alt: 'recent self portrait'
 		}
 	];
@@ -259,7 +259,7 @@
 				rgba(164, 202, 116, 0.06),
 				rgba(164, 202, 116, 0.06)
 			),
-			url('/grass_bg.png');
+			url('/grass_bg.webp');
 
 		background-size: cover;
 		background-position: center;
